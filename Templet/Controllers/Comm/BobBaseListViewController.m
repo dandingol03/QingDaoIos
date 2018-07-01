@@ -12,7 +12,7 @@
 //#import "UITableViewCell+Util.h"
 
 #define LIST_PAGE_INDEX_FIRST 1
-#define LIST_PAGE_SIZE 10
+#define LIST_PAGE_SIZE 5
 
 @interface BobBaseListViewController ()
 

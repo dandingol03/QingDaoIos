@@ -6,8 +6,7 @@
 //  Copyright © 2018年 丁一明. All rights reserved.
 //
 
-#import <AFNetworking/AFNetworking.h>
-
+#import "AFNetworking/AFNetworking.h"
 
 //请求成功回调block
 typedef void (^requestSuccessBlock)(NSDictionary *dic);

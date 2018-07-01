@@ -7,8 +7,9 @@
 //
 
 #import "BobBaseListViewController.h"
+#import "OfficeListCellView.h"
 
-@interface OfficeListDetailViewController : BobBaseListViewController
+@interface OfficeListDetailViewController : BobBaseListViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,VcDDelegate>
 
 @property (strong, nonatomic) NSString *expendId;
 

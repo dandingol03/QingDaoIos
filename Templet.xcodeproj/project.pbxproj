@@ -592,13 +592,6 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		2A4748D220CB78280056AE60 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		2A4748D620CBAC720056AE60 /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,7 +763,6 @@
 		2A661BD720C80C3E00A32173 /* Templet */ = {
 			isa = PBXGroup;
 			children = (
-				2A4748D220CB78280056AE60 /* ViewModel */,
 				2A661BF220C80C7600A32173 /* Vendor */,
 				2A661BF120C80C7000A32173 /* Helper */,
 				2A661BF020C80C6900A32173 /* Views */,
@@ -1578,7 +1570,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codery.Templet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT} /**";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/** /**";
 			};
 			name = Debug;
 		};
@@ -1601,7 +1593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codery.Templet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT} /**";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/** /**";
 			};
 			name = Release;
 		};

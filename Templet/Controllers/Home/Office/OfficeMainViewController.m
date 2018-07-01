@@ -133,7 +133,12 @@
     AppDelegate* appDelegate = [AppDelegate shareDelegate];
     NSString* personId = appDelegate.personId;
     NSString* pageStr = [NSString stringWithFormat:@"%ld",(long)page];
-    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr};
+    if(page==1){
+         [self addPageIndexIsFirst:YES];
+    }else{
+         [self addPageIndexIsFirst:NO];
+    }
+    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"99"};
     [[DYMHTTPManager sharedManager] requestWithMethod:GET
                                              WithPath:str
                                            WithParams:parameters

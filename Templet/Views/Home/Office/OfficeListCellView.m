@@ -38,9 +38,20 @@
     }else{
         self.frame = CGRectMake(10,self.position*210,ScreenWidth-40, 200);
     }
-      NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(updateFrameDelete:) name:@"officeListDelete" object:nil];
 }
+
+-(void)setDefaultText:(OfficeListInfo*)officeListInfo{
+    self.nameField.text =officeListInfo.name;
+    self.standField.text = officeListInfo.stand;
+    self.univalentField.text = officeListInfo.univalent;
+    self.numberField.text = officeListInfo.number;
+    self.moneyLabel.text = officeListInfo.money;
+    self.moneyLabel.text = officeListInfo.money;
+    self.remarksField.text = officeListInfo.remarks;
+}
+
 
 -(void)updateFrameDelete:(NSNotification *)info
 {
