@@ -7,7 +7,10 @@
 //
 
 #import "OfficeListCellView.h"
+<<<<<<< HEAD
 #import "OfficeInfo.h"
+=======
+>>>>>>> b147e17902b39d7faee37c39a79e00fde9d93aa0
 
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
@@ -38,9 +41,20 @@
     }else{
         self.frame = CGRectMake(10,self.position*210,ScreenWidth-40, 200);
     }
-      NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(updateFrameDelete:) name:@"officeListDelete" object:nil];
 }
+
+-(void)setDefaultText:(OfficeInfo*)officeInfo{
+    self.nameField.text =officeInfo.name;
+    self.standField.text = officeInfo.stand;
+    self.univalentField.text = officeInfo.univalent;
+    self.numberField.text = officeInfo.number;
+    self.moneyLabel.text = officeInfo.money;
+    self.moneyLabel.text = officeInfo.money;
+    self.remarksField.text = officeInfo.remarks;
+}
+
 
 -(void)updateFrameDelete:(NSNotification *)info
 {

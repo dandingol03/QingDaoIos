@@ -71,7 +71,6 @@ UIImagePickerController* picker;
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"fooder-bg11"] forBarMetrics:UIBarMetricsDefault];
-    
     [self getApplyInfo];
 
     OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
@@ -147,7 +146,6 @@ UIImagePickerController* picker;
         default:
             break;
     }
-    
     
 }
 
@@ -329,10 +327,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     // 隐藏UIImagePickerController
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-
-
 
 
 

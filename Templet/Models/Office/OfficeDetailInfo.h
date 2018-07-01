@@ -30,4 +30,8 @@
 @property (nonatomic, strong) NSString *check_state;
 @property (nonatomic, strong) NSString *expendId;
 @property (nonatomic, strong) NSNumber *estimatedNum;
+@property (nonatomic) BOOL isLoan;
+@property (nonatomic, strong) NSString *remarks;
+@property (nonatomic, strong) NSString *cashContent;
+
 @end

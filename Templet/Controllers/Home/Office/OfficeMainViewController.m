@@ -11,6 +11,7 @@
 #import "OfficeMainTableViewCell.h"
 #import "UITableView+CCUtil.h"
 #import "ApplyInfo.h"
+#import "BusinessInfo.h"
 #import "BobLoadingHelper.h"
 #import "OfficeListDetailViewController.h"
 
@@ -114,7 +115,11 @@
     __weak __typeof(self)weakSelf = self;
     [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+<<<<<<< HEAD
         ApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
+=======
+        BusinessInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
+>>>>>>> b147e17902b39d7faee37c39a79e00fde9d93aa0
         OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
         officeListDetailVc.expendId =  data.expendId;
         [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
@@ -130,7 +135,12 @@
     AppDelegate* appDelegate = [AppDelegate shareDelegate];
     NSString* personId = appDelegate.personId;
     NSString* pageStr = [NSString stringWithFormat:@"%ld",(long)page];
-    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr};
+    if(page==1){
+         [self addPageIndexIsFirst:YES];
+    }else{
+         [self addPageIndexIsFirst:NO];
+    }
+    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"99"};
     [[DYMHTTPManager sharedManager] requestWithMethod:GET
                                              WithPath:str
                                            WithParams:parameters
@@ -140,7 +150,11 @@
                                          NSLog(@"responseObject-->%@",content);
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
 
+<<<<<<< HEAD
                                          NSArray *arrayM = [ApplyInfo objectArrayWithKeyValuesArray:array];
+=======
+                                         NSArray *arrayM = [BusinessInfo objectArrayWithKeyValuesArray:array];
+>>>>>>> b147e17902b39d7faee37c39a79e00fde9d93aa0
                                          [self endRefreshing];
                                          [self bindData:arrayM];
                                          [self.loadingHelper hideCommittingView:YES];

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OfficeInfo.h"
 //创建协议
 @protocol VcDDelegate <NSObject>
 - (void)deleteOfficeListCell:(NSInteger)position; //声明协议方法
@@ -18,5 +19,5 @@
 @property (nonatomic, weak) id<VcDDelegate> delegate;
 
 -(void)passViewOfficeList:(NSMutableArray *)officeList position:(NSInteger)position;
-
+-(void)setDefaultText:(OfficeInfo*)officeInfo;
 @end
