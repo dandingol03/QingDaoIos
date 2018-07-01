@@ -115,11 +115,8 @@
     __weak __typeof(self)weakSelf = self;
     [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-<<<<<<< HEAD
+
         ApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-=======
-        BusinessInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
->>>>>>> b147e17902b39d7faee37c39a79e00fde9d93aa0
         OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
         officeListDetailVc.expendId =  data.expendId;
         [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
@@ -149,12 +146,7 @@
                                          NSDictionary *content = [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:nil];//转换数据格式
                                          NSLog(@"responseObject-->%@",content);
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-
-<<<<<<< HEAD
-                                         NSArray *arrayM = [ApplyInfo objectArrayWithKeyValuesArray:array];
-=======
                                          NSArray *arrayM = [BusinessInfo objectArrayWithKeyValuesArray:array];
->>>>>>> b147e17902b39d7faee37c39a79e00fde9d93aa0
                                          [self endRefreshing];
                                          [self bindData:arrayM];
                                          [self.loadingHelper hideCommittingView:YES];

@@ -49,7 +49,6 @@
 }
 
 - (void)bindData:(ApplyInfo *)data
->>>>>>> b147e17902b39d7faee37c39a79e00fde9d93aa0
 {
     self.titleLabel.text = data.internalName;
     self.expandTypeLabel.text = data.expendType;

@@ -7,10 +7,7 @@
 //
 
 #import "OfficeListCellView.h"
-<<<<<<< HEAD
 #import "OfficeInfo.h"
-=======
->>>>>>> b147e17902b39d7faee37c39a79e00fde9d93aa0
 
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
