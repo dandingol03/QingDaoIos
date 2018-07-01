@@ -7,17 +7,73 @@
 //
 
 #import "AppDelegate.h"
+#import "PanBackNavigationController.h"
+#import "HomeMainViewController.h"
+#import "PersonMainViewController.h"
+#import "UIColor+Util.h"
+#import <Bugly/Bugly.h>
+#import "AppService.h"
+#import "LoginViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UINavigationControllerDelegate,UITabBarControllerDelegate>
+
+
 
 @end
 
 @implementation AppDelegate
 
++ (instancetype)shareDelegate
+{
+    return (AppDelegate*)[[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+
+    [Bugly startWithAppId:@"4b92af9e4c"];
+    [self setupRootView];
+    
     return YES;
+}
+
+#pragma mark 根视图
+- (void)setupRootView
+{
+    
+    LoginViewController* loginVC = [[LoginViewController alloc] init];
+    self.window.rootViewController = loginVC;
+   
+//    PersonMainViewController *person = [[PersonMainViewController alloc]init];
+//    PanBackNavigationController *personNavigation = [[PanBackNavigationController alloc]initWithRootViewController:person];
+//    personNavigation.tabBarItem = [[UITabBarItem alloc] initWithTitle: @"个人中心"
+//                                                                 image:[UIImage imageNamed:@"Account-icon"]
+//                                                         selectedImage:[UIImage imageNamed:@"Account-icon-blue"]];
+//
+//
+//    HomeMainViewController *home = [[HomeMainViewController alloc]init];
+//    PanBackNavigationController *homeNavigation = [[PanBackNavigationController alloc]initWithRootViewController:home];
+//    homeNavigation.tabBarItem = [[UITabBarItem alloc] initWithTitle: @"首页"
+//                                                              image:[UIImage imageNamed:@"icon_home_n"]
+//                                                      selectedImage:[UIImage imageNamed:@"icon_home_s"]];
+//
+//
+//    UITabBarController *tabberVC = [[UITabBarController alloc]init];
+//    tabberVC.viewControllers = @[homeNavigation,personNavigation];
+//    tabberVC.tabBar.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
+//    tabberVC.delegate = self;
+//    [tabberVC.tabBar setBackgroundImage:[UIImage imageNamed:@"fooder-bg"]];
+//
+//    self.rootTabBarController = tabberVC;
+//    self.window.rootViewController = self.rootTabBarController;
+//
+//    [[UITabBar appearance] setTintColor:[UIColor colorWithHex:0x747c90]];
+//    [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithHex:0X21b9f0]];
+//    [[UINavigationBar appearance] setTintColor:[UIColor colorWithHex:0Xffffff alpha:0.5]];
+    
 }
 
 

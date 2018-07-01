@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplyInfo.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UITabBarController *rootTabBarController;
+@property (nonatomic, strong) NSString* personId;
+//@property (nonatomic, strong) NSDictionary* applyInfo;
+@property (nonatomic, strong) ApplyInfo* applyInfo;
 
++ (instancetype)shareDelegate;
 
 @end
 
