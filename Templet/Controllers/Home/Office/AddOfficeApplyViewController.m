@@ -2,14 +2,12 @@
 //  AddOfficeApplyViewController.m
 //  Templet
 //
-//  Created by 丁一明 on 2018/6/12.
-//  Copyright © 2018年 丁一明. All rights reserved.
-//
 
 #import "AddOfficeApplyViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "OfficeListInfo.h"
+#import "OfficeInfo.h"
+#import "ApplyInfo.h"
 #import "PictureViewController.h"
 
 
@@ -76,8 +74,8 @@ UIImagePickerController* picker;
     
     [self getApplyInfo];
 
-    OfficeListInfo* officeListInfo = [[OfficeListInfo alloc] init];
-    self.officeListArray = [NSMutableArray arrayWithObject:officeListInfo];
+    OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
+    self.officeListArray = [NSMutableArray arrayWithObject:officeInfo];
     self.viewCellTag = 0;
     OfficeListCellView *officeListCellView = [OfficeListCellView viewFromXib];
     officeListCellView.delegate = self;
@@ -90,9 +88,9 @@ UIImagePickerController* picker;
 
 -(void)getApplyInfo{
     AppDelegate* appDelegate = [AppDelegate shareDelegate];
-    ApplyInfo* applyInfo = appDelegate.applyInfo;
+    ApplyInitInfo* applyInitInfo = appDelegate.applyInfo;
     
-    NSArray* expenditureItemList = applyInfo.zhichuList;//支出事项
+    NSArray* expenditureItemList = applyInitInfo.zhichuList;//支出事项
     NSMutableArray* expkey = [NSMutableArray array];
     NSMutableArray* expValue = [NSMutableArray array];
     for(NSDictionary *obj in expenditureItemList){
@@ -102,7 +100,7 @@ UIImagePickerController* picker;
     _expenditureItemMap = [NSDictionary dictionaryWithObjects:expValue forKeys:expkey];
     _expenditureItemArray = expValue;
     
-    NSArray* depList = applyInfo.depList;//当前部门
+    NSArray* depList = applyInitInfo.depList;//当前部门
     NSDictionary* dep = [depList objectAtIndex:0];
     self.departmentLabel.text = [dep objectForKey:@"deptName"];
     
@@ -154,8 +152,8 @@ UIImagePickerController* picker;
 }
 
 - (IBAction)addOfficeListAction:(id)sender {
-    OfficeListInfo* officeListInfo = [[OfficeListInfo alloc] init];
-    [self.officeListArray addObject:officeListInfo];
+    OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
+    [self.officeListArray addObject:officeInfo];
     self.viewCellTag = self.viewCellTag+1;
     if(self.viewCellTag == 0){
         CGFloat view3X = self.view3.frame.origin.x;

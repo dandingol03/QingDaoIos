@@ -8,7 +8,7 @@
 
 #import "OfficeListDetailViewController.h"
 #import "OfficeDetailInfo.h"
-#import "OfficeListInfo.h"
+#import "ApplyInfo.h"
 
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
@@ -55,13 +55,13 @@
                                          NSDictionary *data = [content objectForKey:@"data"];
                                          self.info = [OfficeDetailInfo objectWithKeyValues:data];
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         NSMutableArray* officeList = [OfficeListInfo objectArrayWithKeyValuesArray:array];
+                                         NSMutableArray* applyList = [ApplyInfo objectArrayWithKeyValuesArray:array];
                                          
                                          [self endRefreshing];
                                          [self.loadingHelper hideCommittingView:YES];
                                          
-                                         if(officeList!=nil&&officeList.count!=0){
-                                             for(OfficeListInfo* listInfo in officeList){
+                                         if(applyList!=nil&&applyList.count!=0){
+                                             for(ApplyInfo* info in applyList){
                                                  
                                              }
                                          }

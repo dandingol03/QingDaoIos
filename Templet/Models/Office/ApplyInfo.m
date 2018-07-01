@@ -1,8 +1,7 @@
 //
-//  ApplyInfo.m
 //  Templet
 //
-//  Created by 丁一明 on 2018/6/24.
+//  Created by 丁一明 on 2018/6/25.
 //  Copyright © 2018年 丁一明. All rights reserved.
 //
 
@@ -10,13 +9,11 @@
 
 @implementation ApplyInfo
 
-+ (instancetype)ApplyInfoModelWithDict:(NSDictionary *)dict
+- (instancetype)init
 {
-    ApplyInfo *model = [[self alloc]init];
-    
-    [model setValuesForKeysWithDictionary:dict];
-    
-    return model;
+    self = [super init];
+    return self;
 }
+
 
 @end

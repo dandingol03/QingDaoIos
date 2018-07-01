@@ -6,11 +6,11 @@
 //  Copyright © 2018年 丁一明. All rights reserved.
 //
 
-#import "OfficeMainTableViewCell.h"
+#import "TravelTableViewCell.h"
 #import "ApplyInfo.h"
 #import "OfficeListDetailViewController.h"
 
-@interface OfficeMainTableViewCell()
+@interface TravelTableViewCell()
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *feeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *applyTimeLabel;
@@ -24,7 +24,7 @@
 
 
 
-@implementation OfficeMainTableViewCell
+@implementation TravelTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

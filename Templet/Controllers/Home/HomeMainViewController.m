@@ -11,7 +11,7 @@
 #import "HomeCmsAdvertList.h"
 #import "OfficeMainViewController.h"
 #import "TodoListViewController.h"
-#import "ApplyInfo.h"
+#import "ApplyInitInfo.h"
 #import "NSObject+MJKeyValue.h"
 
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
@@ -87,7 +87,7 @@
                                          NSLog(@"responseObject-->%@",content);
                                          AppDelegate* appDelegate = [AppDelegate shareDelegate];
                                          //appDelegate.applyInfo = [content objectForKey:@"data"];
-                                         appDelegate.applyInfo = [ApplyInfo objectWithKeyValues:[content objectForKey:@"data"]];
+                                         appDelegate.applyInfo = [ApplyInitInfo objectWithKeyValues:[content objectForKey:@"data"]];
                                      }
                                       WithFailurBlock:^(NSError *error) {
                                           NSLog(@"error-->%@",error);

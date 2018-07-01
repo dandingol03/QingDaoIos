@@ -7,7 +7,7 @@
 //
 
 #import "OfficeListCellView.h"
-#import "OfficeListInfo.h"
+#import "OfficeInfo.h"
 
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
@@ -54,35 +54,35 @@
 }
 
 - (IBAction)showMoney:(UITextField*)sender {
-    OfficeListInfo* officeListInfo = [self.officeList objectAtIndex:self.position];
+    OfficeInfo* officeInfo = [self.officeList objectAtIndex:self.position];
     
     switch (sender.tag) {
         case 1:{
-            officeListInfo.name = self.nameField.text;
+            officeInfo.name = self.nameField.text;
         }
             break;
         case 2:{
-            officeListInfo.stand = self.standField.text;
+            officeInfo.stand = self.standField.text;
         }
             break;
         case 3:{
             float univalent = [self.univalentField.text floatValue];
             float number = [self.numberField.text floatValue];
             self.moneyLabel.text = [NSString stringWithFormat:@"%0.2f",univalent*number];
-            officeListInfo.univalent = self.univalentField.text;
-            officeListInfo.money = self.moneyLabel.text;
+            officeInfo.univalent = self.univalentField.text;
+            officeInfo.money = self.moneyLabel.text;
         }
             break;
         case 4:{
             float univalent = [self.univalentField.text floatValue];
             float number = [self.numberField.text floatValue];
             self.moneyLabel.text = [NSString stringWithFormat:@"%0.2f",univalent*number];
-            officeListInfo.number = self.numberField.text;
-            officeListInfo.money = self.moneyLabel.text;
+            officeInfo.number = self.numberField.text;
+            officeInfo.money = self.moneyLabel.text;
         }
             break;
         case 5:{
-            officeListInfo.remarks = self.remarksField.text;
+            officeInfo.remarks = self.remarksField.text;
         }
             break;
       
