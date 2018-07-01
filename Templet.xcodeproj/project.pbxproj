@@ -131,8 +131,8 @@
 		2AA9358C20DA307300397077 /* BobBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9358720DA307300397077 /* BobBaseViewController.m */; };
 		2AA9358D20DA307300397077 /* BobBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9358820DA307300397077 /* BobBaseListViewController.m */; };
 		2AA9358E20DA307300397077 /* BobResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9358A20DA307300397077 /* BobResultView.m */; };
-		2AC3F27420D01D3700727F89 /* OfficeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3F27320D01D3700727F89 /* OfficeInfo.m */; };
-		2AC9B69C20E0C2D300F0E6FE /* OfficeListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9B69B20E0C2D300F0E6FE /* OfficeListInfo.m */; };
+		2AC3F27420D01D3700727F89 /* BusinessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3F27320D01D3700727F89 /* BusinessInfo.m */; };
+		2AC9B69C20E0C2D300F0E6FE /* OfficeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9B69B20E0C2D300F0E6FE /* OfficeInfo.m */; };
 		2AD4758820E1E9C8005D98A2 /* OfficeListCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD4758720E1E9C8005D98A2 /* OfficeListCellView.m */; };
 		2AD4758A20E1E9ED005D98A2 /* OfficeListCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD4758920E1E9ED005D98A2 /* OfficeListCellView.xib */; };
 		2ADE808120E7DABE001C9F8D /* OfficeListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADE807F20E7DABE001C9F8D /* OfficeListDetailViewController.m */; };
@@ -405,10 +405,10 @@
 		2AA9358920DA307300397077 /* BobResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BobResultView.h; sourceTree = "<group>"; };
 		2AA9358A20DA307300397077 /* BobResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BobResultView.m; sourceTree = "<group>"; };
 		2AA9358F20DA31C900397077 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
-		2AC3F27220D01D3700727F89 /* OfficeInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfficeInfo.h; sourceTree = "<group>"; };
-		2AC3F27320D01D3700727F89 /* OfficeInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfficeInfo.m; sourceTree = "<group>"; };
-		2AC9B69A20E0C2D300F0E6FE /* OfficeListInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfficeListInfo.h; sourceTree = "<group>"; };
-		2AC9B69B20E0C2D300F0E6FE /* OfficeListInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfficeListInfo.m; sourceTree = "<group>"; };
+		2AC3F27220D01D3700727F89 /* BusinessInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessInfo.h; sourceTree = "<group>"; };
+		2AC3F27320D01D3700727F89 /* BusinessInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessInfo.m; sourceTree = "<group>"; };
+		2AC9B69A20E0C2D300F0E6FE /* OfficeInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfficeInfo.h; sourceTree = "<group>"; };
+		2AC9B69B20E0C2D300F0E6FE /* OfficeInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfficeInfo.m; sourceTree = "<group>"; };
 		2AD4758620E1E9C8005D98A2 /* OfficeListCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OfficeListCellView.h; sourceTree = "<group>"; };
 		2AD4758720E1E9C8005D98A2 /* OfficeListCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OfficeListCellView.m; sourceTree = "<group>"; };
 		2AD4758920E1E9ED005D98A2 /* OfficeListCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfficeListCellView.xib; sourceTree = "<group>"; };
@@ -1041,14 +1041,14 @@
 		2AC9B69920E0C26900F0E6FE /* Office */ = {
 			isa = PBXGroup;
 			children = (
-				2AC3F27220D01D3700727F89 /* OfficeInfo.h */,
-				2AC3F27320D01D3700727F89 /* OfficeInfo.m */,
+				2AC3F27220D01D3700727F89 /* BusinessInfo.h */,
+				2AC3F27320D01D3700727F89 /* BusinessInfo.m */,
 				2A1258FB20E8B45B00B6A16F /* OfficeDetailInfo.h */,
 				2A1258FC20E8B45B00B6A16F /* OfficeDetailInfo.m */,
 				2AE5117120DFE7D700580DEC /* ApplyInfo.h */,
 				2AE5117220DFE7D700580DEC /* ApplyInfo.m */,
-				2AC9B69A20E0C2D300F0E6FE /* OfficeListInfo.h */,
-				2AC9B69B20E0C2D300F0E6FE /* OfficeListInfo.m */,
+				2AC9B69A20E0C2D300F0E6FE /* OfficeInfo.h */,
+				2AC9B69B20E0C2D300F0E6FE /* OfficeInfo.m */,
 			);
 			path = Office;
 			sourceTree = "<group>";
@@ -1314,7 +1314,7 @@
 				2A3A3C4E20CD364000B55178 /* MKAnnotationView+WebCache.m in Sources */,
 				2A61576420D8913300B7F0D9 /* ActionSheetMultipleStringPicker.m in Sources */,
 				2A61574420D8912900B7F0D9 /* MJRefreshNormalHeader.m in Sources */,
-				2AC9B69C20E0C2D300F0E6FE /* OfficeListInfo.m in Sources */,
+				2AC9B69C20E0C2D300F0E6FE /* OfficeInfo.m in Sources */,
 				2AA3F8B520D7F21900CEEE44 /* TodoListInfo.m in Sources */,
 				2AE5117320DFE7D700580DEC /* ApplyInfo.m in Sources */,
 				2A6E1CF820CABB78002FC5C0 /* IQTitleBarButtonItem.m in Sources */,
@@ -1380,7 +1380,7 @@
 				2A61573620D8912900B7F0D9 /* MJRefreshBackFooter.m in Sources */,
 				2AD4758820E1E9C8005D98A2 /* OfficeListCellView.m in Sources */,
 				2A61573820D8912900B7F0D9 /* MJRefreshFooter.m in Sources */,
-				2AC3F27420D01D3700727F89 /* OfficeInfo.m in Sources */,
+				2AC3F27420D01D3700727F89 /* BusinessInfo.m in Sources */,
 				2A661C0620C812C900A32173 /* UIColor+Util.m in Sources */,
 				2A0AEEA120D00B4B00FB902F /* UIView+CCUtil.m in Sources */,
 				2AE2921B20E3759D005692D5 /* ELCOverlayImageView.m in Sources */,

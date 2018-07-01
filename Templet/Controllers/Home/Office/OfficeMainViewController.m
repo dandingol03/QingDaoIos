@@ -13,7 +13,7 @@
 #import "CCTableViewDataSource.h"
 #import "OfficeMainTableViewCell.h"
 #import "UITableView+CCUtil.h"
-#import "OfficeInfo.h"
+#import "BusinessInfo.h"
 #import "BobLoadingHelper.h"
 #import "OfficeListDetailViewController.h"
 
@@ -117,7 +117,7 @@
     __weak __typeof(self)weakSelf = self;
     [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        OfficeInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
+        BusinessInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
         OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
         officeListDetailVc.expendId =  data.expendId;
         [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
@@ -148,7 +148,7 @@
                                          NSLog(@"responseObject-->%@",content);
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
 
-                                         NSArray *arrayM = [OfficeInfo objectArrayWithKeyValuesArray:array];
+                                         NSArray *arrayM = [BusinessInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          [self bindData:arrayM];
                                          [self.loadingHelper hideCommittingView:YES];

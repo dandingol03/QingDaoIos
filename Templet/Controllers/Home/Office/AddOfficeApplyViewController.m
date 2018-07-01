@@ -9,7 +9,7 @@
 #import "AddOfficeApplyViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "OfficeListInfo.h"
+#import "OfficeInfo.h"
 #import "PictureViewController.h"
 
 
@@ -74,8 +74,8 @@ UIImagePickerController* picker;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"fooder-bg11"] forBarMetrics:UIBarMetricsDefault];
     [self getApplyInfo];
-    OfficeListInfo* officeListInfo = [[OfficeListInfo alloc] init];
-    self.officeListArray = [NSMutableArray arrayWithObject:officeListInfo];
+    OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
+    self.officeListArray = [NSMutableArray arrayWithObject:officeInfo];
     self.viewCellTag = 0;
     OfficeListCellView *officeListCellView = [OfficeListCellView viewFromXib];
     officeListCellView.delegate = self;
@@ -151,8 +151,8 @@ UIImagePickerController* picker;
 }
 
 - (IBAction)addOfficeListAction:(id)sender {
-    OfficeListInfo* officeListInfo = [[OfficeListInfo alloc] init];
-    [self.officeListArray addObject:officeListInfo];
+    OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
+    [self.officeListArray addObject:officeInfo];
     self.viewCellTag = self.viewCellTag+1;
     if(self.viewCellTag == 0){
         CGFloat view3X = self.view3.frame.origin.x;

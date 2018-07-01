@@ -7,7 +7,7 @@
 //
 
 #import "OfficeMainTableViewCell.h"
-#import "OfficeInfo.h"
+#import "BusinessInfo.h"
 #import "OfficeListDetailViewController.h"
 
 @interface OfficeMainTableViewCell()
@@ -48,7 +48,7 @@
     return 180;
 }
 
-- (void)bindData:(OfficeInfo *)data
+- (void)bindData:(BusinessInfo *)data
 {
     self.titleLabel.text = data.internalName;
     self.expandTypeLabel.text = data.expendType;

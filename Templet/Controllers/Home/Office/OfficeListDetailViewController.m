@@ -8,7 +8,7 @@
 
 #import "OfficeListDetailViewController.h"
 #import "OfficeDetailInfo.h"
-#import "OfficeListInfo.h"
+#import "OfficeInfo.h"
 
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
@@ -107,7 +107,7 @@
                                          NSDictionary *data = [content objectForKey:@"data"];
                                          self.info = [OfficeDetailInfo objectWithKeyValues:data];
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         self.officeListArray = [OfficeListInfo objectArrayWithKeyValuesArray:array];
+                                         self.officeListArray = [OfficeInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          [self.loadingHelper hideCommittingView:YES];
                                          
@@ -184,7 +184,7 @@
     self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height+210*count+20);
     if(self.officeListArray!=nil&&self.officeListArray.count!=0){
         self.viewCellTag = self.viewCellTag+1;
-        for(OfficeListInfo* listInfo in self.officeListArray){
+        for(OfficeInfo* listInfo in self.officeListArray){
             if(self.viewCellTag==0){
                 self.viewCell = [[UIView alloc]initWithFrame:CGRectMake(10, 10, ScreenWidth-40, 200)];
                 self.viewCell.tag = self.viewCellTag;
@@ -208,8 +208,8 @@
 }
 
 - (IBAction)addOfficeListAction:(id)sender {
-    OfficeListInfo* officeListInfo = [[OfficeListInfo alloc] init];
-    [self.officeListArray addObject:officeListInfo];
+    OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
+    [self.officeListArray addObject:officeInfo];
     self.viewCellTag = self.viewCellTag+1;
     if(self.viewCellTag == 0){
         CGFloat view3X = self.view3.frame.origin.x;
