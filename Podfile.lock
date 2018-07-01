@@ -28,6 +28,12 @@ DEPENDENCIES:
   - MJExtension (= 2.0.4)
   - ReactiveCocoa (= 2.5)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - MJExtension
+    - ReactiveCocoa
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   MJExtension: 90503779f5c2608b76b5b0f41efdb05c080d1976
@@ -35,4 +41,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 551a3efbb1eba6f55dea733581db1cfd1cd68d64
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.2
