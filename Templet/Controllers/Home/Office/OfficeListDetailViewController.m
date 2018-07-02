@@ -8,10 +8,8 @@
 
 #import "OfficeListDetailViewController.h"
 #import "OfficeDetailInfo.h"
-#import "ApplyInfo.h"
 #import "OfficeInfo.h"
 #import "ApplyInitInfo.h"
-
 
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
@@ -19,6 +17,18 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic) IBOutlet UIView *view1;
+@property (strong, nonatomic) IBOutlet UIView *view2;
+@property (strong, nonatomic) IBOutlet UIView *view11;
+@property (strong, nonatomic) IBOutlet UIView *view12;
+@property (strong, nonatomic) IBOutlet UIView *view13;
+@property (strong, nonatomic) IBOutlet UIView *view14;
+@property (strong, nonatomic) IBOutlet UIView *view21;
+@property (strong, nonatomic) IBOutlet UIView *view22;
+@property (strong, nonatomic) IBOutlet UIView *view41;
+@property (strong, nonatomic) IBOutlet UIView *view42;
+@property (strong, nonatomic) IBOutlet UIView *view43;
+@property (strong, nonatomic) IBOutlet UIView *view44;
 
 @property (strong, nonatomic) IBOutlet UILabel *expenditureLabel;//支出事项
 @property (strong, nonatomic) IBOutlet UILabel *departmentLabel;//当前单位
@@ -70,13 +80,30 @@
     [self getDetailInfo:self.expendId];
     self.isFold = NO;
     
+    self.scrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    self.contentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 1300);
+    self.view1.frame = CGRectMake(10, 0, SCREEN_WIDTH-20, 200);
+    self.view11.frame = CGRectMake(0, 0, self.view1.frame.size.width, 48);
+    self.view12.frame = CGRectMake(0, 50, self.view1.frame.size.width, 48);
+    self.view13.frame = CGRectMake(0, 100, self.view1.frame.size.width, 48);
+    self.view14.frame = CGRectMake(0, 150, self.view1.frame.size.width, 48);
+    
+    self.view2.frame = CGRectMake(10, 215, SCREEN_WIDTH-20, 100);
+    self.view21.frame = CGRectMake(0, 0,self.view2.frame.size.width, 48);
+    self.view22.frame = CGRectMake(0, 50,self.view2.frame.size.width, 48);
+    self.view3.frame = CGRectMake(10, 325, SCREEN_WIDTH-20, 0);
+    self.view4.frame = CGRectMake(10, self.view3.frame.origin.y+self.view3.frame.size.height, SCREEN_WIDTH-20, 340);
+    self.view41.frame = CGRectMake(0, 0, self.view4.frame.size.width, 50);
+    self.view42.frame = CGRectMake(40, 60, self.view4.frame.size.width-80, 50);
+    self.view43.frame = CGRectMake(0, 125, self.view4.frame.size.width, 50);
+    self.view44.frame = CGRectMake(0, 190, self.view4.frame.size.width, 110);
 }
 
 -(void)getApplyInfo{
     AppDelegate* appDelegate = [AppDelegate shareDelegate];
-    ApplyInitInfo* applyInitInfo = appDelegate.applyInfo;
+    ApplyInitInfo* initInfo = appDelegate.applyInfo;
     
-    NSArray* expenditureItemList = applyInitInfo.zhichuList;//支出事项
+    NSArray* expenditureItemList = initInfo.zhichuList;//支出事项
     NSMutableArray* expkey = [NSMutableArray array];
     NSMutableArray* expValue = [NSMutableArray array];
     for(NSDictionary *obj in expenditureItemList){
@@ -86,7 +113,7 @@
     _expenditureItemMap = [NSDictionary dictionaryWithObjects:expValue forKeys:expkey];
     _expenditureItemArray = expValue;
     
-    NSArray* depList = applyInitInfo.depList;//当前部门
+    NSArray* depList = initInfo.depList;//当前部门
     NSDictionary* dep = [depList objectAtIndex:0];
     self.departmentLabel.text = [dep objectForKey:@"deptName"];
 
@@ -110,25 +137,12 @@
                                          NSDictionary *data = [content objectForKey:@"data"];
                                          self.info = [OfficeDetailInfo objectWithKeyValues:data];
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-//
-//                                         NSMutableArray* applyList = [ApplyInfo objectArrayWithKeyValuesArray:array];
-//
-//                                         [self endRefreshing];
-//                                         [self.loadingHelper hideCommittingView:YES];
-//
-//                                         if(applyList!=nil&&applyList.count!=0){
-//                                             for(ApplyInfo* info in applyList){
-//
-//                                             }
-//                                         }
-
                                          self.officeListArray = [OfficeInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          [self.loadingHelper hideCommittingView:YES];
                                          
                                          [self setDefaultInfo:self.info];
                                          [self initOfficeList:self.officeListArray];
-
                                          
                                      }
                                       WithFailurBlock:^(NSError *error) {

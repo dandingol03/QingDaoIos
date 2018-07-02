@@ -7,7 +7,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "OfficeInfo.h"
-#import "ApplyInfo.h"
+#import "BusinessApplyInfo.h"
 #import "PictureViewController.h"
 
 

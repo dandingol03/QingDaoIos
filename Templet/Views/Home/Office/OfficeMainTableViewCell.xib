@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXM-ot-e0k">
-                        <rect key="frame" x="0.0" y="15" width="345" height="150"/>
+                        <rect key="frame" x="15" y="15" width="345" height="150"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1UK-cV-54n" userLabel="View1">
                                 <rect key="frame" x="0.0" y="0.0" width="345" height="99"/>
@@ -70,7 +70,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-p2-pFI" userLabel="View2">
                                 <rect key="frame" x="10" y="99" width="325" height="2"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.47709787436548223" green="0.47709787436548223" blue="0.47709787436548223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="D0i-7g-gCL"/>
                                 </constraints>
@@ -79,10 +79,10 @@
                                 <rect key="frame" x="0.0" y="101" width="345" height="49"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Buz-yD-H2i" userLabel="View31">
-                                        <rect key="frame" x="0.0" y="5" width="172.5" height="39"/>
+                                        <rect key="frame" x="0.0" y="5" width="172.5" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE1-Sa-LHc">
-                                                <rect key="frame" x="10" y="5" width="70" height="29"/>
+                                                <rect key="frame" x="10" y="5" width="70" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="NAy-hl-dY8"/>
                                                     <constraint firstAttribute="height" constant="30" id="OjV-tb-JZt"/>
@@ -92,7 +92,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05-26 09:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSa-a0-ADk">
-                                                <rect key="frame" x="75" y="5" width="100" height="29"/>
+                                                <rect key="frame" x="75" y="5" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="7KL-oU-eqa"/>
                                                     <constraint firstAttribute="width" constant="100" id="caP-8g-Z5H"/>
@@ -115,10 +115,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KK0-AE-obH" userLabel="View32">
-                                        <rect key="frame" x="172.5" y="5" width="172.5" height="39"/>
+                                        <rect key="frame" x="172.5" y="5" width="172.5" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5q-JU-vSK">
-                                                <rect key="frame" x="0.0" y="5" width="40" height="29"/>
+                                                <rect key="frame" x="0.0" y="5" width="40" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="1kE-i2-8C7"/>
                                                     <constraint firstAttribute="width" constant="40" id="4hH-8n-V26"/>
@@ -187,11 +187,11 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="WXM-ot-e0k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Bye-EH-8YJ"/>
+                    <constraint firstItem="WXM-ot-e0k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Bye-EH-8YJ"/>
                     <constraint firstItem="WXM-ot-e0k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ETi-sZ-lpD"/>
                     <constraint firstAttribute="bottom" secondItem="WXM-ot-e0k" secondAttribute="bottom" constant="14.5" id="Rfg-6t-DDJ"/>
-                    <constraint firstItem="WXM-ot-e0k" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="Roz-W4-JcN"/>
-                    <constraint firstAttribute="trailing" secondItem="WXM-ot-e0k" secondAttribute="trailing" id="lCI-sO-Jux"/>
+                    <constraint firstAttribute="trailing" secondItem="WXM-ot-e0k" secondAttribute="trailing" constant="15" id="iE4-cP-vBp"/>
+                    <constraint firstAttribute="trailing" secondItem="WXM-ot-e0k" secondAttribute="trailing" constant="15" id="lCI-sO-Jux"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

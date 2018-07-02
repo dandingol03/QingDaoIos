@@ -14,7 +14,7 @@
 #import "BobLoadingHelper.h"
 #import "OfficeMainTableViewCell.h"
 #import "AddOfficeApplyViewController.h"
-#import "ApplyInfo.h"
+#import "BusinessApplyInfo.h"
 #import "OfficeListDetailViewController.h"
 
 
@@ -73,7 +73,7 @@
     [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
-        ApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
+        BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
         OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
         officeListDetailVc.expendId =  data.expendId;
         [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];

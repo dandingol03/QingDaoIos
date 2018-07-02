@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,8 +23,20 @@
                 <outlet property="remarkField" destination="pir-d9-Zrv" id="SKP-bE-84D"/>
                 <outlet property="scrollView" destination="j5r-w0-Pu2" id="f3L-nq-Ghw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view1" destination="UWg-uS-0I9" id="iES-yj-r8A"/>
+                <outlet property="view11" destination="4Xw-we-d8t" id="LWv-QO-lOQ"/>
+                <outlet property="view12" destination="MLX-N6-61M" id="Fdc-Zs-Q7M"/>
+                <outlet property="view13" destination="R8z-vo-u4A" id="MaV-sN-8cA"/>
+                <outlet property="view14" destination="tdp-Mp-xG4" id="uni-8p-QLh"/>
+                <outlet property="view2" destination="R5B-Ip-ZNn" id="zoB-RO-wMg"/>
+                <outlet property="view21" destination="L2b-wm-avw" id="hcu-Ow-3oK"/>
+                <outlet property="view22" destination="Yzp-M4-gnD" id="ir5-Mc-yQW"/>
                 <outlet property="view3" destination="aUg-6f-Tan" id="9dg-GT-Tuq"/>
                 <outlet property="view4" destination="wnz-Kx-0LQ" id="QZQ-25-gqt"/>
+                <outlet property="view41" destination="rMG-ZE-y2q" id="mzJ-OQ-9d7"/>
+                <outlet property="view42" destination="8Wd-kQ-IgB" id="hZa-jS-sw6"/>
+                <outlet property="view43" destination="VNl-S8-kSl" id="QCX-cD-MdK"/>
+                <outlet property="view44" destination="OkG-ua-ZBC" id="4GX-Nv-GUU"/>
                 <outlet property="view5" destination="cuO-A7-mH2" id="i6N-SO-w9L"/>
                 <outlet property="viewCell" destination="giG-It-81x" id="M90-xU-Yaz"/>
                 <outlet property="yesBtn" destination="236-TQ-nhB" id="pmc-q2-uEY"/>
@@ -101,7 +112,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8z-vo-u4A">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8z-vo-u4A" userLabel="View13">
                                             <rect key="frame" x="0.0" y="100" width="355" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
@@ -122,7 +133,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdp-Mp-xG4">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdp-Mp-xG4" userLabel="View14">
                                             <rect key="frame" x="0.0" y="150" width="355" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
@@ -179,7 +190,7 @@
                                     <rect key="frame" x="10" y="215" width="355" height="100"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2b-wm-avw">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2b-wm-avw" userLabel="View21">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
@@ -207,7 +218,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzp-M4-gnD">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzp-M4-gnD" userLabel="View22">
                                             <rect key="frame" x="0.0" y="50" width="355" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
@@ -375,13 +386,12 @@
                                 </view>
                             </subviews>
                             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <viewLayoutGuide key="safeArea" id="Vzp-ek-URb"/>
                         </view>
                     </subviews>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33" y="110"/>
         </view>
     </objects>
     <resources>

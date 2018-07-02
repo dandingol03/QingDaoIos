@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ApplyInfo : NSObject
+@interface BusinessApplyInfo : NSObject
 
 @property (nonatomic, strong) NSString *reimbId;
 @property (nonatomic,strong) NSString *expendId;

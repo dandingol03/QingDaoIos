@@ -7,7 +7,7 @@
 //
 
 #import "TravelTableViewCell.h"
-#import "ApplyInfo.h"
+#import "BusinessApplyInfo.h"
 #import "OfficeListDetailViewController.h"
 
 @interface TravelTableViewCell()
@@ -48,7 +48,7 @@
     return 180;
 }
 
-- (void)bindData:(ApplyInfo *)data
+- (void)bindData:(BusinessApplyInfo *)data
 {
     self.titleLabel.text = data.internalName;
     self.expandTypeLabel.text = data.expendType;
