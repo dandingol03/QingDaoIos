@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaoXiaoListViewController">
+            <connections>
+                <outlet property="finishedButton" destination="Z29-Os-QDz" id="YzR-KU-oxR"/>
+                <outlet property="lineView1" destination="2J5-i5-bbf" id="8Pp-9a-5qs"/>
+                <outlet property="lineView2" destination="hIW-7P-4uZ" id="4hs-Kx-n7U"/>
+                <outlet property="tableView" destination="343-g2-WeY" id="M81-vE-hRU"/>
+                <outlet property="topView" destination="oBD-Tx-Wru" id="J65-IO-yRK"/>
+                <outlet property="view" destination="Ugr-QI-3nf" id="0KS-Xl-jAX"/>
+                <outlet property="withoutFinishedButton" destination="gKe-Fh-zjx" id="B9g-eX-xMD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ugr-QI-3nf">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBD-Tx-Wru" userLabel="Top View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKe-Fh-zjx">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="60"/>
+                            <color key="tintColor" red="0.33156578650000001" green="0.48241189289999997" blue="0.70314482869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="未完成">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="switchOver:" destination="-1" eventType="touchUpInside" id="Ze7-ZC-7eo"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2J5-i5-bbf" userLabel="indicator1">
+                            <rect key="frame" x="0.0" y="60" width="187.5" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="rRT-Kv-4fr"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z29-Os-QDz">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="60"/>
+                            <color key="tintColor" red="0.33156578650000001" green="0.48241189289999997" blue="0.70314482869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="已完成">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="switchOver:" destination="-1" eventType="touchUpInside" id="hWg-Vc-Dbs"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIW-7P-4uZ" userLabel="indicator2">
+                            <rect key="frame" x="187.5" y="60" width="187.5" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="mBM-16-AXU"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                    <constraints>
+                        <constraint firstItem="gKe-Fh-zjx" firstAttribute="width" secondItem="oBD-Tx-Wru" secondAttribute="width" multiplier="1/2" id="3KL-C6-mQq"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="5yh-JC-FCw"/>
+                        <constraint firstItem="2J5-i5-bbf" firstAttribute="top" secondItem="gKe-Fh-zjx" secondAttribute="bottom" id="84V-eR-q8R"/>
+                        <constraint firstItem="gKe-Fh-zjx" firstAttribute="centerY" secondItem="oBD-Tx-Wru" secondAttribute="centerY" id="9Ml-de-M8d"/>
+                        <constraint firstItem="gKe-Fh-zjx" firstAttribute="top" secondItem="oBD-Tx-Wru" secondAttribute="top" id="I1o-GC-vFq"/>
+                        <constraint firstAttribute="trailing" secondItem="Z29-Os-QDz" secondAttribute="trailing" id="QqW-s9-RmO"/>
+                        <constraint firstItem="Z29-Os-QDz" firstAttribute="width" secondItem="oBD-Tx-Wru" secondAttribute="width" multiplier="1/2" id="RXn-pB-j0G"/>
+                        <constraint firstItem="hIW-7P-4uZ" firstAttribute="width" secondItem="oBD-Tx-Wru" secondAttribute="width" multiplier="1/2" id="Rdj-R1-osy"/>
+                        <constraint firstItem="gKe-Fh-zjx" firstAttribute="leading" secondItem="oBD-Tx-Wru" secondAttribute="leading" id="TiA-9h-shZ"/>
+                        <constraint firstItem="Z29-Os-QDz" firstAttribute="top" secondItem="oBD-Tx-Wru" secondAttribute="top" id="Xtg-j2-OVw"/>
+                        <constraint firstAttribute="trailing" secondItem="hIW-7P-4uZ" secondAttribute="trailing" id="ZPI-S7-HKz"/>
+                        <constraint firstItem="Z29-Os-QDz" firstAttribute="height" secondItem="oBD-Tx-Wru" secondAttribute="height" id="Zda-dF-jAK"/>
+                        <constraint firstItem="hIW-7P-4uZ" firstAttribute="top" secondItem="Z29-Os-QDz" secondAttribute="bottom" id="hAR-kV-T0K"/>
+                        <constraint firstItem="2J5-i5-bbf" firstAttribute="leading" secondItem="oBD-Tx-Wru" secondAttribute="leading" id="jbA-1D-ppD"/>
+                        <constraint firstItem="2J5-i5-bbf" firstAttribute="width" secondItem="oBD-Tx-Wru" secondAttribute="width" multiplier="1/2" id="oPp-pO-DCh"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCm-Jg-QOt">
+                    <rect key="frame" x="0.0" y="62" width="375" height="556"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="343-g2-WeY">
+                            <rect key="frame" x="10" y="5" width="355" height="550"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="343-g2-WeY" firstAttribute="leading" secondItem="mCm-Jg-QOt" secondAttribute="leading" constant="10" id="1Ia-wP-dSo"/>
+                        <constraint firstItem="343-g2-WeY" firstAttribute="centerX" secondItem="mCm-Jg-QOt" secondAttribute="centerX" id="8sB-uM-apJ"/>
+                        <constraint firstItem="343-g2-WeY" firstAttribute="top" secondItem="mCm-Jg-QOt" secondAttribute="top" constant="5" id="HXm-I1-4h1"/>
+                        <constraint firstAttribute="bottom" secondItem="343-g2-WeY" secondAttribute="bottom" constant="1" id="jGc-D2-m1U"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oBD-Tx-Wru" firstAttribute="leading" secondItem="Ugr-QI-3nf" secondAttribute="leading" id="3lg-dC-GXv"/>
+                <constraint firstItem="mCm-Jg-QOt" firstAttribute="top" secondItem="oBD-Tx-Wru" secondAttribute="bottom" constant="2" id="8y1-mY-Jrs"/>
+                <constraint firstItem="oBD-Tx-Wru" firstAttribute="width" secondItem="Ugr-QI-3nf" secondAttribute="width" id="DP9-Hb-4ao"/>
+                <constraint firstItem="oBD-Tx-Wru" firstAttribute="leading" secondItem="Ugr-QI-3nf" secondAttribute="leading" id="MVT-D4-hUe"/>
+                <constraint firstItem="mCm-Jg-QOt" firstAttribute="width" secondItem="Ugr-QI-3nf" secondAttribute="width" id="O7d-jl-nem"/>
+                <constraint firstItem="oBD-Tx-Wru" firstAttribute="top" secondItem="Ugr-QI-3nf" secondAttribute="top" id="TtQ-0B-Z9Z"/>
+                <constraint firstAttribute="bottom" secondItem="mCm-Jg-QOt" secondAttribute="bottom" constant="49" id="gln-7n-QS1"/>
+                <constraint firstItem="oBD-Tx-Wru" firstAttribute="trailing" secondItem="mCm-Jg-QOt" secondAttribute="trailing" id="op4-5s-b8k"/>
+                <constraint firstItem="mCm-Jg-QOt" firstAttribute="leading" secondItem="Ugr-QI-3nf" secondAttribute="leading" id="qUz-wt-Sx9"/>
+                <constraint firstItem="oBD-Tx-Wru" firstAttribute="top" secondItem="Ugr-QI-3nf" secondAttribute="top" id="tMF-ZG-Fit"/>
+                <constraint firstItem="mCm-Jg-QOt" firstAttribute="top" secondItem="Ugr-QI-3nf" secondAttribute="top" constant="62" id="ux2-gn-gTu"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="UB4-y5-KQh"/>
+        </view>
+    </objects>
+</document>

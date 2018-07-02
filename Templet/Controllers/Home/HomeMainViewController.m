@@ -10,6 +10,12 @@
 #import "BobCycleScrollView.h"
 #import "HomeCmsAdvertList.h"
 #import "OfficeMainViewController.h"
+#import "TravelViewController.h"
+#import "ConferenceListViewController.h"
+#import "CultivateListViewController.h"
+#import "JdListViewController.h"
+#import "GoAbroadListViewController.h"
+#import "BaoXiaoListViewController.h"
 #import "TodoListViewController.h"
 #import "ApplyInitInfo.h"
 #import "NSObject+MJKeyValue.h"
@@ -145,19 +151,35 @@
         }
             break;
         case 2:{
-           
+            TravelViewController *travelListVc = [[TravelViewController alloc]init];
+            [self.navigationController pushViewController:travelListVc animated:YES];
         }
             break;
         case 3:{
-            
+            ConferenceListViewController *conferenceListVc = [[ConferenceListViewController alloc]init];
+            [self.navigationController pushViewController:conferenceListVc animated:YES];
         }
             break;
         case 4:{
-            
+            CultivateListViewController *cultivateListVc = [[CultivateListViewController alloc]init];
+            [self.navigationController pushViewController:cultivateListVc animated:YES];
         }
             break;
         case 5:{
-           
+            JdListViewController *jdListVc = [[JdListViewController alloc]init];
+            [self.navigationController pushViewController:jdListVc animated:YES];
+        }
+            break;
+        case 6:
+            {
+                GoAbroadListViewController *goAbroadListVc = [[GoAbroadListViewController alloc]init];
+                [self.navigationController pushViewController:goAbroadListVc animated:YES];
+            }
+            break;
+        case 7:
+        {
+            BaoXiaoListViewController *baoxiaoListVc = [[BaoXiaoListViewController alloc]init];
+            [self.navigationController pushViewController:baoxiaoListVc animated:YES];
         }
             break;
         case 9:{

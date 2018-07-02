@@ -1,22 +1,21 @@
 //
-//  OfficeMainViewController.m
+//  BaoXiaoListViewController.m
 //  Templet
 //
+//
 
-#import "OfficeMainViewController.h"
-#import "AddOfficeApplyViewController.h"
+#import "BaoXiaoListViewController.h"
 #import "CCTableDataItem.h"
 #import "CCTableViewDelegate.h"
 #import "CCTableViewDataSource.h"
-#import "OfficeMainTableViewCell.h"
 #import "UITableView+CCUtil.h"
-#import "BusinessApplyInfo.h"
-#import "BusinessInfo.h"
 #import "BobLoadingHelper.h"
+#import "AddOfficeApplyViewController.h"
+#import "BusinessApplyInfo.h"
 #import "OfficeListDetailViewController.h"
+#include "BaoXiaoTableViewCell.h"
 
-
-@interface OfficeMainViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface BaoXiaoListViewController ()<UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
 @property (strong, nonatomic) IBOutlet UIView *lineView1;
 @property (strong, nonatomic) IBOutlet UIView *lineView2;
@@ -35,11 +34,12 @@
 
 @end
 
-@implementation OfficeMainViewController
+@implementation BaoXiaoListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"办公";
+    // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title=@"直接报销";
     [self setViewItem];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
@@ -50,11 +50,32 @@
     self.withoutFinishedButton.titleLabel.tintColor = [UIColor blueColor];
     self.finishedButton.titleLabel.tintColor = [UIColor blueColor];
     
-   // [self combitionData];
+    // [self combitionData];
     [self setTableView];
     self.isAutoReloadData = YES;
     [self addRefreshHeaderView];
     [self addLoadMoreFooterView];
+}
+
+-(void)setTableView{
+    self.tableView.delegate = self.delegate;
+    self.tableView.dataSource = self.dataSource;
+    
+    [self.tableView registerNibCellClasses:@[[BaoXiaoTableViewCell class],
+                                             ]];
+    [self loadData:YES];
+    
+    __weak __typeof(self)weakSelf = self;
+    [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
+        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
+        officeListDetailVc.expendId =  data.expendId;
+        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
+        
+        
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -62,11 +83,12 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     if(self.withoutFinishedButton.selected){
-         self.lineView1.backgroundColor = [UIColor blueColor];
+        self.lineView1.backgroundColor = [UIColor blueColor];
     }else{
-         self.lineView2.backgroundColor = [UIColor blueColor];
+        self.lineView2.backgroundColor = [UIColor blueColor];
     }
 }
+
 
 
 - (void)setViewItem{
@@ -78,12 +100,53 @@
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
 
+
 //右上角加号
 -(void)addingOfficeApply{
     AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
     addOfficeVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:addOfficeVc animated:YES];
 }
+
+#pragma mark http
+-(void)requestDataService:(NSInteger)page{
+    [self.loadingHelper showCommittingView:self.view withTitle:@"loading" animated:YES];
+    NSString* url = @""HTTP_SERVER"/m_getBaoxiaoInfoList.do";
+    //构造参数
+    AppDelegate* appDelegate = [AppDelegate shareDelegate];
+    NSString* personId = appDelegate.personId;
+    NSString* pageStr = [NSString stringWithFormat:@"%ld",(long)page];
+    if(page==1){
+        [self addPageIndexIsFirst:YES];
+    }else{
+        [self addPageIndexIsFirst:NO];
+    }
+    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr};
+    [[DYMHTTPManager sharedManager] requestWithMethod:GET
+                                             WithPath:url
+                                           WithParams:parameters
+                                     WithSuccessBlock:^(NSDictionary *dic) {
+                                         NSData *strData = dic;
+                                         NSDictionary *content = [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:nil];//转换数据格式
+                                         NSLog(@"responseObject-->%@",content);
+                                         NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
+                                         NSArray *arrayM = [BusinessApplyInfo objectArrayWithKeyValuesArray:array];
+                                         [self endRefreshing];
+                                         if(page!=1)
+                                             [self bindData:arrayM isRefresh:false];
+                                         else
+                                             [self bindData:arrayM isRefresh:true];
+                                         [self.loadingHelper hideCommittingView:YES];
+                                     }
+                                      WithFailurBlock:^(NSError *error) {
+                                          NSLog(@"error-->%@",error);
+                                          [self endRefreshing];
+                                      }];
+    
+}
+
+
+
 
 - (IBAction)switchOver:(UIButton *)sender {
     if (sender.tag == 1) {
@@ -92,7 +155,7 @@
         self.lineView1.backgroundColor = [UIColor blueColor];
         self.lineView2.backgroundColor = [UIColor whiteColor];
         //[self bindData];
-       
+        
     }else if (sender.tag == 2){
         self.finishedButton.selected = YES;
         self.withoutFinishedButton.selected = NO;
@@ -102,72 +165,17 @@
     }
 }
 
--(void)setTableView{
-    self.tableView.delegate = self.delegate;
-    self.tableView.dataSource = self.dataSource;
-    
-    //self.tableView.frame = CGRectMake(0, -84, SCREEN_WIDTH, SCREEN_HEIGHT);
-    
-    [self.tableView registerNibCellClasses:@[[OfficeMainTableViewCell class],
-                                           ]];
-    [self loadData:YES];
-    
-    __weak __typeof(self)weakSelf = self;
-    [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-        BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
-        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
-        
-    }];
-}
 
-#pragma mark http
--(void)requestDataService:(NSInteger)page{
-    [self.loadingHelper showCommittingView:self.view withTitle:@"loading" animated:YES];
-    NSString* str = @""HTTP_SERVER"/m_getshenQingInfoList.do";
-    //构造参数
-    AppDelegate* appDelegate = [AppDelegate shareDelegate];
-    NSString* personId = appDelegate.personId;
-    NSString* pageStr = [NSString stringWithFormat:@"%ld",(long)page];
-    if(page==1){
-         [self addPageIndexIsFirst:YES];
-    }else{
-         [self addPageIndexIsFirst:NO];
-    }
-    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"99"};
-    [[DYMHTTPManager sharedManager] requestWithMethod:GET
-                                             WithPath:str
-                                           WithParams:parameters
-                                     WithSuccessBlock:^(NSDictionary *dic) {
-                                         NSData *strData = dic;
-                                         NSDictionary *content = [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:nil];//转换数据格式
-                                         NSLog(@"responseObject-->%@",content);
-                                         NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         NSArray *arrayM = [BusinessInfo objectArrayWithKeyValuesArray:array];
-                                         [self endRefreshing];
-                                         [self bindData:arrayM];
-                                         [self.loadingHelper hideCommittingView:YES];
-                                     }
-                                      WithFailurBlock:^(NSError *error) {
-                                          NSLog(@"error-->%@",error);
-                                          [self endRefreshing];
-                                      }];
-   
-}
-
-    
-- (void)bindData:(NSArray *)dataList
-    {
+- (void)bindData:(NSArray *)dataList isRefresh:(Boolean)isRefresh
+{
     @try {
-        
-        [self.dataItem clearData];
+        if(isRefresh)
+            [self.dataItem clearData];
         if( self.withoutFinishedButton.selected){
-            [self.dataItem addCellClass:[OfficeMainTableViewCell class] dataItems:dataList];
+            [self.dataItem addCellClass:[BaoXiaoTableViewCell class] dataItems:dataList];
         }else{
-            [self.dataItem addCellClass:[OfficeMainTableViewCell class] dataItems:self.finishedInfoItems];
+            [self.dataItem addCellClass:[BaoXiaoTableViewCell class] dataItems:self.finishedInfoItems];
         }
         
         [self.tableView reloadData];
@@ -203,10 +211,19 @@
     return _dataSource;
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

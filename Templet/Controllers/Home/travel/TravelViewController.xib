@@ -17,6 +17,7 @@
                 <outlet property="lineView2" destination="Eol-tB-1rV" id="erf-k2-fZg"/>
                 <outlet property="tableView" destination="BR8-ud-Cgc" id="sic-mC-xV6"/>
                 <outlet property="topView" destination="Ao9-Mg-2Ql" id="NOs-s1-62C"/>
+                <outlet property="view" destination="8hG-Ws-9G8" id="PX8-Vh-fjo"/>
                 <outlet property="withoutFinishedButton" destination="aKp-vz-CSh" id="kus-Yf-zFJ"/>
             </connections>
         </placeholder>

@@ -1,10 +1,10 @@
 //
-//  TravelViewController.m
+//  JdListViewController.m
 //  Templet
 //
 //
 
-#import "TravelViewController.h"
+#import "JdListViewController.h"
 #import "CCTableDataItem.h"
 #import "CCTableViewDelegate.h"
 #import "CCTableViewDataSource.h"
@@ -13,10 +13,10 @@
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
 #import "OfficeListDetailViewController.h"
-#import "TravelTableViewCell.h"
+#import "JdTableViewCell.h"
 
 
-@interface TravelViewController ()<UITableViewDataSource,UITableViewDataSource>
+@interface JdListViewController () <UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
 @property (strong, nonatomic) IBOutlet UIView *lineView1;
 @property (strong, nonatomic) IBOutlet UIView *lineView2;
@@ -32,15 +32,14 @@
 @property (strong, nonatomic) NSArray *finishedInfoItems;
 
 @property(nonatomic,assign)BOOL update;
-
 @end
 
-@implementation TravelViewController
+@implementation JdListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title=@"差旅";
+    self.navigationItem.title=@"接待";
     [self setViewItem];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
@@ -56,14 +55,13 @@
     self.isAutoReloadData = YES;
     [self addRefreshHeaderView];
     [self addLoadMoreFooterView];
-    
 }
 
 -(void)setTableView{
     self.tableView.delegate = self.delegate;
     self.tableView.dataSource = self.dataSource;
     
-    [self.tableView registerNibCellClasses:@[[TravelTableViewCell class],
+    [self.tableView registerNibCellClasses:@[[JdTableViewCell class],
                                              ]];
     [self loadData:YES];
     
@@ -102,6 +100,7 @@
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
 
+
 //右上角加号
 -(void)addingOfficeApply{
     AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
@@ -122,7 +121,7 @@
     }else{
         [self addPageIndexIsFirst:NO];
     }
-    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"10"};
+    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"15"};
     [[DYMHTTPManager sharedManager] requestWithMethod:GET
                                              WithPath:str
                                            WithParams:parameters
@@ -174,9 +173,9 @@
         if(isRefresh)
             [self.dataItem clearData];
         if( self.withoutFinishedButton.selected){
-            [self.dataItem addCellClass:[TravelTableViewCell class] dataItems:dataList];
+            [self.dataItem addCellClass:[JdTableViewCell class] dataItems:dataList];
         }else{
-            [self.dataItem addCellClass:[TravelTableViewCell class] dataItems:self.finishedInfoItems];
+            [self.dataItem addCellClass:[JdTableViewCell class] dataItems:self.finishedInfoItems];
         }
         
         [self.tableView reloadData];

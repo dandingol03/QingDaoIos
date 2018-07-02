@@ -1,22 +1,22 @@
 //
-//  TravelViewController.m
+//  OfficeMainViewController.m
 //  Templet
 //
-//
 
-#import "TravelViewController.h"
+#import "OfficeMainViewController.h"
+#import "AddOfficeApplyViewController.h"
 #import "CCTableDataItem.h"
 #import "CCTableViewDelegate.h"
 #import "CCTableViewDataSource.h"
+#import "OfficeMainTableViewCell.h"
 #import "UITableView+CCUtil.h"
-#import "BobLoadingHelper.h"
-#import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
+#import "BusinessInfo.h"
+#import "BobLoadingHelper.h"
 #import "OfficeListDetailViewController.h"
-#import "TravelTableViewCell.h"
 
 
-@interface TravelViewController ()<UITableViewDataSource,UITableViewDataSource>
+@interface OfficeMainViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *topView;
 @property (strong, nonatomic) IBOutlet UIView *lineView1;
 @property (strong, nonatomic) IBOutlet UIView *lineView2;
@@ -35,12 +35,11 @@
 
 @end
 
-@implementation TravelViewController
+@implementation OfficeMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title=@"差旅";
+    self.navigationItem.title = @"办公";
     [self setViewItem];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
@@ -51,33 +50,11 @@
     self.withoutFinishedButton.titleLabel.tintColor = [UIColor blueColor];
     self.finishedButton.titleLabel.tintColor = [UIColor blueColor];
     
-    // [self combitionData];
+   // [self combitionData];
     [self setTableView];
     self.isAutoReloadData = YES;
     [self addRefreshHeaderView];
     [self addLoadMoreFooterView];
-    
-}
-
--(void)setTableView{
-    self.tableView.delegate = self.delegate;
-    self.tableView.dataSource = self.dataSource;
-    
-    [self.tableView registerNibCellClasses:@[[TravelTableViewCell class],
-                                             ]];
-    [self loadData:YES];
-    
-    __weak __typeof(self)weakSelf = self;
-    [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
-        BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
-        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
-        
-        
-    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -85,12 +62,11 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     if(self.withoutFinishedButton.selected){
-        self.lineView1.backgroundColor = [UIColor blueColor];
+         self.lineView1.backgroundColor = [UIColor blueColor];
     }else{
-        self.lineView2.backgroundColor = [UIColor blueColor];
+         self.lineView2.backgroundColor = [UIColor blueColor];
     }
 }
-
 
 
 - (void)setViewItem{
@@ -109,6 +85,45 @@
     [self.navigationController pushViewController:addOfficeVc animated:YES];
 }
 
+- (IBAction)switchOver:(UIButton *)sender {
+    if (sender.tag == 1) {
+        self.withoutFinishedButton.selected = YES;
+        self.finishedButton.selected = NO;
+        self.lineView1.backgroundColor = [UIColor blueColor];
+        self.lineView2.backgroundColor = [UIColor whiteColor];
+        //[self bindData];
+       
+    }else if (sender.tag == 2){
+        self.finishedButton.selected = YES;
+        self.withoutFinishedButton.selected = NO;
+        self.lineView1.backgroundColor = [UIColor whiteColor];
+        self.lineView2.backgroundColor = [UIColor blueColor];
+        //[self bindData];
+    }
+}
+
+-(void)setTableView{
+    self.tableView.delegate = self.delegate;
+    self.tableView.dataSource = self.dataSource;
+    
+    //self.tableView.frame = CGRectMake(0, -84, SCREEN_WIDTH, SCREEN_HEIGHT);
+    
+    [self.tableView registerNibCellClasses:@[[OfficeMainTableViewCell class],
+                                           ]];
+    [self loadData:YES];
+    
+    __weak __typeof(self)weakSelf = self;
+    [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+        BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
+        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
+        officeListDetailVc.expendId =  data.expendId;
+        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
+        
+    }];
+}
+
 #pragma mark http
 -(void)requestDataService:(NSInteger)page{
     [self.loadingHelper showCommittingView:self.view withTitle:@"loading" animated:YES];
@@ -118,11 +133,11 @@
     NSString* personId = appDelegate.personId;
     NSString* pageStr = [NSString stringWithFormat:@"%ld",(long)page];
     if(page==1){
-        [self addPageIndexIsFirst:YES];
+         [self addPageIndexIsFirst:YES];
     }else{
-        [self addPageIndexIsFirst:NO];
+         [self addPageIndexIsFirst:NO];
     }
-    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"10"};
+    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"99"};
     [[DYMHTTPManager sharedManager] requestWithMethod:GET
                                              WithPath:str
                                            WithParams:parameters
@@ -131,7 +146,7 @@
                                          NSDictionary *content = [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:nil];//转换数据格式
                                          NSLog(@"responseObject-->%@",content);
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         NSArray *arrayM = [BusinessApplyInfo objectArrayWithKeyValuesArray:array];
+                                         NSArray *arrayM = [BusinessInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          if(page!=1)
                                              [self bindData:arrayM isRefresh:false];
@@ -143,40 +158,19 @@
                                           NSLog(@"error-->%@",error);
                                           [self endRefreshing];
                                       }];
+   
+}
+
     
-}
-
-
-
-
-- (IBAction)switchOver:(UIButton *)sender {
-    if (sender.tag == 1) {
-        self.withoutFinishedButton.selected = YES;
-        self.finishedButton.selected = NO;
-        self.lineView1.backgroundColor = [UIColor blueColor];
-        self.lineView2.backgroundColor = [UIColor whiteColor];
-        //[self bindData];
-        
-    }else if (sender.tag == 2){
-        self.finishedButton.selected = YES;
-        self.withoutFinishedButton.selected = NO;
-        self.lineView1.backgroundColor = [UIColor whiteColor];
-        self.lineView2.backgroundColor = [UIColor blueColor];
-        //[self bindData];
-    }
-}
-
-
-
 - (void)bindData:(NSArray *)dataList isRefresh:(Boolean)isRefresh
-{
+    {
     @try {
         if(isRefresh)
             [self.dataItem clearData];
         if( self.withoutFinishedButton.selected){
-            [self.dataItem addCellClass:[TravelTableViewCell class] dataItems:dataList];
+            [self.dataItem addCellClass:[OfficeMainTableViewCell class] dataItems:dataList];
         }else{
-            [self.dataItem addCellClass:[TravelTableViewCell class] dataItems:self.finishedInfoItems];
+            [self.dataItem addCellClass:[OfficeMainTableViewCell class] dataItems:self.finishedInfoItems];
         }
         
         [self.tableView reloadData];
@@ -212,19 +206,10 @@
     return _dataSource;
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

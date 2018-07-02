@@ -10,6 +10,28 @@
 		163F95F530026E1360CD8DC2 /* Pods_Templet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF5A398FF9949DA9BB2429C /* Pods_Templet.framework */; };
 		1A1282BB20E9CBF80078DB92 /* detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282BA20E9CBF80078DB92 /* detail.xib */; };
 		1A1282BD20E9D30B0078DB92 /* VerifyMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282BC20E9D30B0078DB92 /* VerifyMainViewController.xib */; };
+		1A1282C320EA1CE20078DB92 /* ConferenceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282C120EA1CE20078DB92 /* ConferenceListViewController.m */; };
+		1A1282C420EA1CE20078DB92 /* ConferenceListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282C220EA1CE20078DB92 /* ConferenceListViewController.xib */; };
+		1A1282CE20EA201E0078DB92 /* ConferenceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282CC20EA201E0078DB92 /* ConferenceTableViewCell.xib */; };
+		1A1282CF20EA201E0078DB92 /* ConferenceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282CD20EA201E0078DB92 /* ConferenceTableViewCell.m */; };
+		1A1282DA20EA246F0078DB92 /* CultivateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282D820EA246F0078DB92 /* CultivateListViewController.m */; };
+		1A1282DB20EA246F0078DB92 /* CultivateListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282D920EA246F0078DB92 /* CultivateListViewController.xib */; };
+		1A1282E020EA24D70078DB92 /* CultivateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282DE20EA24D70078DB92 /* CultivateTableViewCell.m */; };
+		1A1282E120EA24D70078DB92 /* CultivateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282DF20EA24D70078DB92 /* CultivateTableViewCell.xib */; };
+		1A1282E620EA34570078DB92 /* JdListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282E420EA34570078DB92 /* JdListViewController.m */; };
+		1A1282E720EA34570078DB92 /* JdListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282E520EA34570078DB92 /* JdListViewController.xib */; };
+		1A1282EC20EA36410078DB92 /* JdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282E920EA36410078DB92 /* JdTableViewCell.xib */; };
+		1A1282ED20EA36410078DB92 /* JdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282EB20EA36410078DB92 /* JdTableViewCell.m */; };
+		1A1282F220EA38740078DB92 /* GoAbroadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282F020EA38740078DB92 /* GoAbroadListViewController.m */; };
+		1A1282F320EA38740078DB92 /* GoAbroadListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282F120EA38740078DB92 /* GoAbroadListViewController.xib */; };
+		1A1282F820EA39020078DB92 /* GoAbroadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1282F520EA39020078DB92 /* GoAbroadTableViewCell.m */; };
+		1A1282F920EA39020078DB92 /* GoAbroadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1282F620EA39020078DB92 /* GoAbroadTableViewCell.xib */; };
+		1A12830320EA3EFD0078DB92 /* BaoXiaoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A12830120EA3EFD0078DB92 /* BaoXiaoListViewController.m */; };
+		1A12830420EA3EFD0078DB92 /* BaoXiaoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A12830220EA3EFD0078DB92 /* BaoXiaoListViewController.xib */; };
+		1A12830920EA50860078DB92 /* BaoXiaoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A12830620EA50860078DB92 /* BaoXiaoTableViewCell.m */; };
+		1A12830A20EA50860078DB92 /* BaoXiaoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A12830820EA50860078DB92 /* BaoXiaoTableViewCell.xib */; };
+		1A12830F20EA63D30078DB92 /* TravelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A12830D20EA63D30078DB92 /* TravelDetailViewController.m */; };
+		1A12831020EA63D30078DB92 /* TravelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A12830E20EA63D30078DB92 /* TravelDetailViewController.xib */; };
 		1A2008C820E8C68E0076C253 /* TravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2008C520E8C68D0076C253 /* TravelViewController.m */; };
 		1A2008C920E8C68E0076C253 /* TravelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2008C720E8C68E0076C253 /* TravelViewController.xib */; };
 		1A2008CF20E8DE2F0076C253 /* TravelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2008CC20E8DE2E0076C253 /* TravelTableViewCell.m */; };
@@ -175,6 +197,39 @@
 /* Begin PBXFileReference section */
 		1A1282BA20E9CBF80078DB92 /* detail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detail.xib; sourceTree = "<group>"; };
 		1A1282BC20E9D30B0078DB92 /* VerifyMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyMainViewController.xib; sourceTree = "<group>"; };
+		1A1282C020EA1CE20078DB92 /* ConferenceListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConferenceListViewController.h; sourceTree = "<group>"; };
+		1A1282C120EA1CE20078DB92 /* ConferenceListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferenceListViewController.m; sourceTree = "<group>"; };
+		1A1282C220EA1CE20078DB92 /* ConferenceListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConferenceListViewController.xib; sourceTree = "<group>"; };
+		1A1282CB20EA201D0078DB92 /* ConferenceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceTableViewCell.h; sourceTree = "<group>"; };
+		1A1282CC20EA201E0078DB92 /* ConferenceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConferenceTableViewCell.xib; sourceTree = "<group>"; };
+		1A1282CD20EA201E0078DB92 /* ConferenceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceTableViewCell.m; sourceTree = "<group>"; };
+		1A1282D720EA246F0078DB92 /* CultivateListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CultivateListViewController.h; sourceTree = "<group>"; };
+		1A1282D820EA246F0078DB92 /* CultivateListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CultivateListViewController.m; sourceTree = "<group>"; };
+		1A1282D920EA246F0078DB92 /* CultivateListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CultivateListViewController.xib; sourceTree = "<group>"; };
+		1A1282DD20EA24D60078DB92 /* CultivateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CultivateTableViewCell.h; path = Templet/Views/Home/cultivate/CultivateTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		1A1282DE20EA24D70078DB92 /* CultivateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CultivateTableViewCell.m; path = Templet/Views/Home/cultivate/CultivateTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		1A1282DF20EA24D70078DB92 /* CultivateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CultivateTableViewCell.xib; path = Templet/Views/Home/cultivate/CultivateTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		1A1282E320EA34570078DB92 /* JdListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JdListViewController.h; sourceTree = "<group>"; };
+		1A1282E420EA34570078DB92 /* JdListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JdListViewController.m; sourceTree = "<group>"; };
+		1A1282E520EA34570078DB92 /* JdListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JdListViewController.xib; sourceTree = "<group>"; };
+		1A1282E920EA36410078DB92 /* JdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JdTableViewCell.xib; sourceTree = "<group>"; };
+		1A1282EA20EA36410078DB92 /* JdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JdTableViewCell.h; sourceTree = "<group>"; };
+		1A1282EB20EA36410078DB92 /* JdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JdTableViewCell.m; sourceTree = "<group>"; };
+		1A1282EF20EA38740078DB92 /* GoAbroadListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoAbroadListViewController.h; sourceTree = "<group>"; };
+		1A1282F020EA38740078DB92 /* GoAbroadListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoAbroadListViewController.m; sourceTree = "<group>"; };
+		1A1282F120EA38740078DB92 /* GoAbroadListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoAbroadListViewController.xib; sourceTree = "<group>"; };
+		1A1282F520EA39020078DB92 /* GoAbroadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoAbroadTableViewCell.m; sourceTree = "<group>"; };
+		1A1282F620EA39020078DB92 /* GoAbroadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoAbroadTableViewCell.xib; sourceTree = "<group>"; };
+		1A1282F720EA39020078DB92 /* GoAbroadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoAbroadTableViewCell.h; sourceTree = "<group>"; };
+		1A12830020EA3EFD0078DB92 /* BaoXiaoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaoXiaoListViewController.h; sourceTree = "<group>"; };
+		1A12830120EA3EFD0078DB92 /* BaoXiaoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaoXiaoListViewController.m; sourceTree = "<group>"; };
+		1A12830220EA3EFD0078DB92 /* BaoXiaoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaoXiaoListViewController.xib; sourceTree = "<group>"; };
+		1A12830620EA50860078DB92 /* BaoXiaoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoXiaoTableViewCell.m; sourceTree = "<group>"; };
+		1A12830720EA50860078DB92 /* BaoXiaoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoXiaoTableViewCell.h; sourceTree = "<group>"; };
+		1A12830820EA50860078DB92 /* BaoXiaoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaoXiaoTableViewCell.xib; sourceTree = "<group>"; };
+		1A12830C20EA63D30078DB92 /* TravelDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TravelDetailViewController.h; sourceTree = "<group>"; };
+		1A12830D20EA63D30078DB92 /* TravelDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TravelDetailViewController.m; sourceTree = "<group>"; };
+		1A12830E20EA63D30078DB92 /* TravelDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelDetailViewController.xib; sourceTree = "<group>"; };
 		1A2008C520E8C68D0076C253 /* TravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelViewController.m; sourceTree = "<group>"; };
 		1A2008C620E8C68E0076C253 /* TravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelViewController.h; sourceTree = "<group>"; };
 		1A2008C720E8C68E0076C253 /* TravelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelViewController.xib; sourceTree = "<group>"; };
@@ -495,9 +550,121 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1282BF20EA1C7D0078DB92 /* conference */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282C020EA1CE20078DB92 /* ConferenceListViewController.h */,
+				1A1282C120EA1CE20078DB92 /* ConferenceListViewController.m */,
+				1A1282C220EA1CE20078DB92 /* ConferenceListViewController.xib */,
+			);
+			path = conference;
+			sourceTree = "<group>";
+		};
+		1A1282C520EA1E800078DB92 /* conference */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282CB20EA201D0078DB92 /* ConferenceTableViewCell.h */,
+				1A1282CD20EA201E0078DB92 /* ConferenceTableViewCell.m */,
+				1A1282CC20EA201E0078DB92 /* ConferenceTableViewCell.xib */,
+			);
+			path = conference;
+			sourceTree = "<group>";
+		};
+		1A1282D620EA24510078DB92 /* cultivate */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282D720EA246F0078DB92 /* CultivateListViewController.h */,
+				1A1282D820EA246F0078DB92 /* CultivateListViewController.m */,
+				1A1282D920EA246F0078DB92 /* CultivateListViewController.xib */,
+			);
+			path = cultivate;
+			sourceTree = "<group>";
+		};
+		1A1282DC20EA24BC0078DB92 /* cultivate */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282DD20EA24D60078DB92 /* CultivateTableViewCell.h */,
+				1A1282DE20EA24D70078DB92 /* CultivateTableViewCell.m */,
+				1A1282DF20EA24D70078DB92 /* CultivateTableViewCell.xib */,
+			);
+			name = cultivate;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1A1282E220EA34410078DB92 /* jd */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282E320EA34570078DB92 /* JdListViewController.h */,
+				1A1282E420EA34570078DB92 /* JdListViewController.m */,
+				1A1282E520EA34570078DB92 /* JdListViewController.xib */,
+			);
+			path = jd;
+			sourceTree = "<group>";
+		};
+		1A1282E820EA361A0078DB92 /* jd */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282EA20EA36410078DB92 /* JdTableViewCell.h */,
+				1A1282EB20EA36410078DB92 /* JdTableViewCell.m */,
+				1A1282E920EA36410078DB92 /* JdTableViewCell.xib */,
+			);
+			path = jd;
+			sourceTree = "<group>";
+		};
+		1A1282EE20EA38580078DB92 /* goAbroad */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282EF20EA38740078DB92 /* GoAbroadListViewController.h */,
+				1A1282F020EA38740078DB92 /* GoAbroadListViewController.m */,
+				1A1282F120EA38740078DB92 /* GoAbroadListViewController.xib */,
+			);
+			path = goAbroad;
+			sourceTree = "<group>";
+		};
+		1A1282F420EA38D80078DB92 /* goAbroad */ = {
+			isa = PBXGroup;
+			children = (
+				1A1282F720EA39020078DB92 /* GoAbroadTableViewCell.h */,
+				1A1282F520EA39020078DB92 /* GoAbroadTableViewCell.m */,
+				1A1282F620EA39020078DB92 /* GoAbroadTableViewCell.xib */,
+			);
+			path = goAbroad;
+			sourceTree = "<group>";
+		};
+		1A1282FA20EA3E700078DB92 /* baoxiao */ = {
+			isa = PBXGroup;
+			children = (
+				1A12830020EA3EFD0078DB92 /* BaoXiaoListViewController.h */,
+				1A12830120EA3EFD0078DB92 /* BaoXiaoListViewController.m */,
+				1A12830220EA3EFD0078DB92 /* BaoXiaoListViewController.xib */,
+			);
+			path = baoxiao;
+			sourceTree = "<group>";
+		};
+		1A12830520EA506D0078DB92 /* baoxiao */ = {
+			isa = PBXGroup;
+			children = (
+				1A12830720EA50860078DB92 /* BaoXiaoTableViewCell.h */,
+				1A12830620EA50860078DB92 /* BaoXiaoTableViewCell.m */,
+				1A12830820EA50860078DB92 /* BaoXiaoTableViewCell.xib */,
+			);
+			path = baoxiao;
+			sourceTree = "<group>";
+		};
+		1A12830B20EA5E330078DB92 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				1A12830C20EA63D30078DB92 /* TravelDetailViewController.h */,
+				1A12830D20EA63D30078DB92 /* TravelDetailViewController.m */,
+				1A12830E20EA63D30078DB92 /* TravelDetailViewController.xib */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 		1A2008C420E8C5960076C253 /* travel */ = {
 			isa = PBXGroup;
 			children = (
+				1A12830B20EA5E330078DB92 /* detail */,
 				1A2008C620E8C68E0076C253 /* TravelViewController.h */,
 				1A2008C520E8C68D0076C253 /* TravelViewController.m */,
 				1A2008C720E8C68E0076C253 /* TravelViewController.xib */,
@@ -516,7 +683,7 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		2A0AEE7B20CFFFF400FB902F /* Office */ = {
+		2A0AEE7B20CFFFF400FB902F /* business */ = {
 			isa = PBXGroup;
 			children = (
 				2A0AEE8220D0016300FB902F /* OfficeMainViewController.h */,
@@ -530,7 +697,7 @@
 				2ADE808020E7DABE001C9F8D /* OfficeListDetailViewController.xib */,
 				1A1282BA20E9CBF80078DB92 /* detail.xib */,
 			);
-			path = Office;
+			path = business;
 			sourceTree = "<group>";
 		};
 		2A0AEE8C20D00B1400FB902F /* CCTableDataSource */ = {
@@ -583,6 +750,7 @@
 		2A3A3C2220CCEBAA00B55178 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1A1282C520EA1E800078DB92 /* conference */,
 				1A2008CB20E8DE1E0076C253 /* travel */,
 				2AA3F8AD20D7EABE00CEEE44 /* TodoList */,
 				2A0AEEA620D00DA700FB902F /* Office */,
@@ -855,6 +1023,10 @@
 		2A661BF020C80C6900A32173 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1A12830520EA506D0078DB92 /* baoxiao */,
+				1A1282F420EA38D80078DB92 /* goAbroad */,
+				1A1282E820EA361A0078DB92 /* jd */,
+				1A1282DC20EA24BC0078DB92 /* cultivate */,
 				2A3A3C2220CCEBAA00B55178 /* Home */,
 			);
 			path = Views;
@@ -920,9 +1092,14 @@
 		2A661C0220C8116700A32173 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1A1282FA20EA3E700078DB92 /* baoxiao */,
+				1A1282EE20EA38580078DB92 /* goAbroad */,
+				1A1282E220EA34410078DB92 /* jd */,
+				1A1282D620EA24510078DB92 /* cultivate */,
+				1A1282BF20EA1C7D0078DB92 /* conference */,
 				1A2008C420E8C5960076C253 /* travel */,
 				2AA3F8A720D7E43500CEEE44 /* TodoList */,
-				2A0AEE7B20CFFFF400FB902F /* Office */,
+				2A0AEE7B20CFFFF400FB902F /* business */,
 				2A661BF820C80E1400A32173 /* HomeMainViewController.h */,
 				2A661BF920C80E1400A32173 /* HomeMainViewController.m */,
 				2A661BFA20C80E1400A32173 /* HomeMainViewController.xib */,
@@ -1245,15 +1422,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1282C420EA1CE20078DB92 /* ConferenceListViewController.xib in Resources */,
 				2AD4758A20E1E9ED005D98A2 /* OfficeListCellView.xib in Resources */,
 				2A6E1CBD20CAB1FF002FC5C0 /* LoginViewController.xib in Resources */,
 				2AE2921F20E3759D005692D5 /* radio_btn_on@2x.png in Resources */,
 				2A661BFC20C80E1400A32173 /* HomeMainViewController.xib in Resources */,
+				1A1282DB20EA246F0078DB92 /* CultivateListViewController.xib in Resources */,
 				1A2008D020E8DE2F0076C253 /* TravelTableViewCell.xib in Resources */,
+				1A1282EC20EA36410078DB92 /* JdTableViewCell.xib in Resources */,
 				2AE2922120E3759D005692D5 /* 添加.png in Resources */,
 				2AE2922820E3759D005692D5 /* MJPhotoBrowser.bundle in Resources */,
 				2A661C1320C817B000A32173 /* PersonInfoViewController.xib in Resources */,
 				2AE2922020E3759D005692D5 /* radio_btn_onTwo.png in Resources */,
+				1A1282F320EA38740078DB92 /* GoAbroadListViewController.xib in Resources */,
 				2A661BE520C80C3E00A32173 /* LaunchScreen.storyboard in Resources */,
 				2A0AEE8620D0016300FB902F /* OfficeMainViewController.xib in Resources */,
 				2ADE808220E7DABE001C9F8D /* OfficeListDetailViewController.xib in Resources */,
@@ -1262,21 +1443,28 @@
 				2A0AEEAB20D00E3200FB902F /* OfficeMainTableViewCell.xib in Resources */,
 				1A1282BD20E9D30B0078DB92 /* VerifyMainViewController.xib in Resources */,
 				2A661C0E20C8178A00A32173 /* SettingMainViewController.xib in Resources */,
+				1A12831020EA63D30078DB92 /* TravelDetailViewController.xib in Resources */,
 				2AE2921D20E3759D005692D5 /* radio_btn_offTwo.png in Resources */,
+				1A1282E720EA34570078DB92 /* JdListViewController.xib in Resources */,
 				1A2008C920E8C68E0076C253 /* TravelViewController.xib in Resources */,
 				2A661BE220C80C3E00A32173 /* Assets.xcassets in Resources */,
 				2AE2922220E3759D005692D5 /* 添加@2x.png in Resources */,
 				2A0AEE8B20D0084F00FB902F /* AddOfficeApplyViewController.xib in Resources */,
 				2AE2921C20E3759D005692D5 /* radio_btn_off.png in Resources */,
 				2A61575D20D8913300B7F0D9 /* README.md in Resources */,
+				1A1282F920EA39020078DB92 /* GoAbroadTableViewCell.xib in Resources */,
 				2AE2922320E3759D005692D5 /* 添加@3x.png in Resources */,
+				1A1282E120EA24D70078DB92 /* CultivateTableViewCell.xib in Resources */,
 				2A61575E20D8913300B7F0D9 /* LICENSE in Resources */,
 				2AA3F8B220D7EAE100CEEE44 /* TodoListTableViewCell.xib in Resources */,
 				2AA3F8AC20D7E46400CEEE44 /* TodoListViewController.xib in Resources */,
+				1A12830420EA3EFD0078DB92 /* BaoXiaoListViewController.xib in Resources */,
 				2A661C0120C8115F00A32173 /* PersonMainViewController.xib in Resources */,
 				2AE2921E20E3759D005692D5 /* radio_btn_on.png in Resources */,
+				1A12830A20EA50860078DB92 /* BaoXiaoTableViewCell.xib in Resources */,
 				2A661BE020C80C3E00A32173 /* Main.storyboard in Resources */,
 				2A6E1CFB20CABB78002FC5C0 /* IQKeyboardManager.bundle in Resources */,
+				1A1282CE20EA201E0078DB92 /* ConferenceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,6 +1524,7 @@
 				2A3A3C5520CD364000B55178 /* SDWebImageManager.m in Sources */,
 				2A6E1CED20CABB78002FC5C0 /* IQKeyboardManager.m in Sources */,
 				2A61576020D8913300B7F0D9 /* ActionSheetCustomPicker.m in Sources */,
+				1A1282CF20EA201E0078DB92 /* ConferenceTableViewCell.m in Sources */,
 				2A1258FD20E8B45B00B6A16F /* OfficeDetailInfo.m in Sources */,
 				2A3A3C5620CD364000B55178 /* SDWebImagePrefetcher.m in Sources */,
 				1A2008CF20E8DE2F0076C253 /* TravelTableViewCell.m in Sources */,
@@ -1351,6 +1540,7 @@
 				2A3A3C4E20CD364000B55178 /* MKAnnotationView+WebCache.m in Sources */,
 				2A61576420D8913300B7F0D9 /* ActionSheetMultipleStringPicker.m in Sources */,
 				2A61574420D8912900B7F0D9 /* MJRefreshNormalHeader.m in Sources */,
+				1A1282E020EA24D70078DB92 /* CultivateTableViewCell.m in Sources */,
 				2AC9B69C20E0C2D300F0E6FE /* BusinessApplyInfo.m in Sources */,
 				2AA3F8B520D7F21900CEEE44 /* TodoListInfo.m in Sources */,
 				2AE5117320DFE7D700580DEC /* ApplyInitInfo.m in Sources */,
@@ -1361,6 +1551,7 @@
 				2A0AEE9E20D00B4B00FB902F /* CCTableViewDataSource.m in Sources */,
 				2A661C8120C826C400A32173 /* AppService.m in Sources */,
 				2A3A3C5320CD364000B55178 /* SDWebImageDownloader.m in Sources */,
+				1A1282F220EA38740078DB92 /* GoAbroadListViewController.m in Sources */,
 				2A61573B20D8912900B7F0D9 /* NSBundle+MJRefresh.m in Sources */,
 				2A3A3C5420CD364000B55178 /* SDWebImageDownloaderOperation.m in Sources */,
 				2AE2921920E3759D005692D5 /* ELCConsole.m in Sources */,
@@ -1378,6 +1569,7 @@
 				2A661BF720C80D8400A32173 /* PanBackNavigationController.m in Sources */,
 				2A3A3C2820CCED0D00B55178 /* BobView.m in Sources */,
 				2AE2922C20E3759D005692D5 /* MJPhotoToolbar.m in Sources */,
+				1A12830920EA50860078DB92 /* BaoXiaoTableViewCell.m in Sources */,
 				2A61573D20D8912900B7F0D9 /* MJRefreshAutoGifFooter.m in Sources */,
 				2A0AEE9F20D00B4B00FB902F /* CCBaseTableViewCell.m in Sources */,
 				2A661BFB20C80E1400A32173 /* HomeMainViewController.m in Sources */,
@@ -1401,6 +1593,7 @@
 				1A2008D320E91D160076C253 /* BusinessInfo.m in Sources */,
 				2A6E1CF920CABB78002FC5C0 /* IQToolbar.m in Sources */,
 				2A6E1CFA20CABB78002FC5C0 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				1A12830F20EA63D30078DB92 /* TravelDetailViewController.m in Sources */,
 				2A6E1CBC20CAB1FF002FC5C0 /* LoginViewController.m in Sources */,
 				2A61573520D8912900B7F0D9 /* MJRefreshAutoFooter.m in Sources */,
 				2AA9358E20DA307300397077 /* BobResultView.m in Sources */,
@@ -1413,6 +1606,8 @@
 				2A61574020D8912900B7F0D9 /* MJRefreshBackGifFooter.m in Sources */,
 				2A61574120D8912900B7F0D9 /* MJRefreshBackNormalFooter.m in Sources */,
 				2A661C0020C8115F00A32173 /* PersonMainViewController.m in Sources */,
+				1A1282DA20EA246F0078DB92 /* CultivateListViewController.m in Sources */,
+				1A1282ED20EA36410078DB92 /* JdTableViewCell.m in Sources */,
 				2A3A3C2020CCDB3600B55178 /* VerifyMainViewController.m in Sources */,
 				2AA3F8B120D7EAE100CEEE44 /* TodoListTableViewCell.m in Sources */,
 				2A6E1CC620CAB74F002FC5C0 /* JVFloatLabeledTextView.m in Sources */,
@@ -1426,8 +1621,11 @@
 				2A61573F20D8912900B7F0D9 /* MJRefreshAutoStateFooter.m in Sources */,
 				2AE2921520E3759D005692D5 /* ELCAlbumPickerController.m in Sources */,
 				2A0AEEA520D00B4B00FB902F /* CCTableDataItem.m in Sources */,
+				1A1282F820EA39020078DB92 /* GoAbroadTableViewCell.m in Sources */,
 				2A661C7C20C8241200A32173 /* NSDate+Util.m in Sources */,
 				2A61573C20D8912900B7F0D9 /* UIView+MJExtension.m in Sources */,
+				1A12830320EA3EFD0078DB92 /* BaoXiaoListViewController.m in Sources */,
+				1A1282C320EA1CE20078DB92 /* ConferenceListViewController.m in Sources */,
 				2AE2922420E3759D005692D5 /* PictureAddCell.m in Sources */,
 				2A661C7D20C8241200A32173 /* NSString+Util.m in Sources */,
 				2A3A3C2520CCEC0100B55178 /* BobCycleScrollView.m in Sources */,
@@ -1442,6 +1640,7 @@
 				2A61573720D8912900B7F0D9 /* MJRefreshComponent.m in Sources */,
 				2A6E1CF020CABB78002FC5C0 /* IQUIScrollView+Additions.m in Sources */,
 				2A3A3C5920CD364000B55178 /* UIImage+MultiFormat.m in Sources */,
+				1A1282E620EA34570078DB92 /* JdListViewController.m in Sources */,
 				2AE2921A20E3759D005692D5 /* ELCImagePickerController.m in Sources */,
 				2A61573220D8912900B7F0D9 /* UIScrollView+MJExtension.m in Sources */,
 				2A661BDA20C80C3E00A32173 /* AppDelegate.m in Sources */,

@@ -22,6 +22,7 @@
 @implementation VerifyMainViewController
 
 NSMutableArray * officeListArray;
+NSLayoutConstraint *heightConstraint;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,26 +44,77 @@ NSMutableArray * officeListArray;
     CGFloat view3X = self.office_ll.frame.origin.x;
     CGFloat view3Y = self.office_ll.frame.origin.y;
     
+  
+    if(heightConstraint!=nil)
+    {
+            [self.office_ll removeConstraint:heightConstraint];
+    }
     
-    [self.office_ll addConstraint:[NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.office_ll.frame.size.height+210]];
+    heightConstraint = [NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:210];
+    
+
+    
+    [self.office_ll addConstraints:@[heightConstraint]];
   
     self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height+210);
 //    self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height+210);
     
-
+    //创建cell
     OfficeListCellView *officeView = [OfficeListCellView viewFromXib];
-    officeView.frame= CGRectMake(view3X, view3Y, self.office_ll.frame.size.width, 210);
+
     
-    
-    //officeListCellView.delegate = self;
+    officeView.delegate = self;
     [officeView passViewOfficeList:officeListArray position:0];
+    [officeView setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    
     [self.office_ll addSubview:officeView];
-   
+    
+    //设置left
+    NSLayoutConstraint* leftConstraint =[NSLayoutConstraint constraintWithItem:officeView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.office_ll attribute:NSLayoutAttributeLeading multiplier:1 constant:0];
+    //设置top
+    NSLayoutConstraint* topConstraint=
+    [NSLayoutConstraint constraintWithItem:officeView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.office_ll attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    //设置高度
+    NSLayoutConstraint* hc=
+    [NSLayoutConstraint constraintWithItem:officeView
+                                 attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1 constant:210];
+    //设置宽度
+    NSLayoutConstraint* rightConstraint=
+    [NSLayoutConstraint constraintWithItem:officeView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.office_ll attribute:NSLayoutAttributeTrailing multiplier:1 constant:0];
+    
+    [self.office_ll addConstraints:@[leftConstraint, rightConstraint, topConstraint, hc]];
+    
+    //[self.office_ll removeConstraint:heightConstraint];
+    
+
+    
+//    leftConstraint.active=true;
+//    rightConstraint.active=true;
+//    topConstraint.active=true;
+//    hc.active=true;
+//
+    
+    
     [self.office_ll layoutIfNeeded];
 
+}
 
+//cell删除的回调，用于调整height的constaint
+-(void)deleteOfficeListCell:(NSInteger)position
+{
+    //更新heightConstraint
+    [self.office_ll removeConstraint:heightConstraint];
+    [heightConstraint setConstant:self.office_ll.frame.size.height-210];
+    [self.office_ll addConstraint:heightConstraint];
+    
+    self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height-210);
+    [self.office_ll layoutIfNeeded];
+    
+    //self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height-210);
 
 }
+
 
 
 /*

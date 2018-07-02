@@ -1,22 +1,21 @@
 //
-//  TravelViewController.m
+//  ConferenceListViewController.m
 //  Templet
 //
 //
 
-#import "TravelViewController.h"
+#import "ConferenceListViewController.h"
 #import "CCTableDataItem.h"
 #import "CCTableViewDelegate.h"
 #import "CCTableViewDataSource.h"
 #import "UITableView+CCUtil.h"
 #import "BobLoadingHelper.h"
+#import "ConferenceTableViewCell.h"
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
 #import "OfficeListDetailViewController.h"
-#import "TravelTableViewCell.h"
 
-
-@interface TravelViewController ()<UITableViewDataSource,UITableViewDataSource>
+@interface ConferenceListViewController () <UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
 @property (strong, nonatomic) IBOutlet UIView *lineView1;
 @property (strong, nonatomic) IBOutlet UIView *lineView2;
@@ -35,12 +34,11 @@
 
 @end
 
-@implementation TravelViewController
+@implementation ConferenceListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title=@"差旅";
+    self.navigationItem.title=@"会议";
     [self setViewItem];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
@@ -56,14 +54,15 @@
     self.isAutoReloadData = YES;
     [self addRefreshHeaderView];
     [self addLoadMoreFooterView];
-    
+    // Do any additional setup after loading the view from its nib.
 }
+
 
 -(void)setTableView{
     self.tableView.delegate = self.delegate;
     self.tableView.dataSource = self.dataSource;
     
-    [self.tableView registerNibCellClasses:@[[TravelTableViewCell class],
+    [self.tableView registerNibCellClasses:@[[ConferenceTableViewCell class],
                                              ]];
     [self loadData:YES];
     
@@ -80,6 +79,7 @@
     }];
 }
 
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -91,8 +91,6 @@
     }
 }
 
-
-
 - (void)setViewItem{
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                            style:UIBarButtonItemStyleDone
@@ -101,6 +99,7 @@
     rightBarButtonItem.image = [UIImage imageNamed:@"jia"];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
+
 
 //右上角加号
 -(void)addingOfficeApply{
@@ -147,8 +146,6 @@
 }
 
 
-
-
 - (IBAction)switchOver:(UIButton *)sender {
     if (sender.tag == 1) {
         self.withoutFinishedButton.selected = YES;
@@ -174,9 +171,9 @@
         if(isRefresh)
             [self.dataItem clearData];
         if( self.withoutFinishedButton.selected){
-            [self.dataItem addCellClass:[TravelTableViewCell class] dataItems:dataList];
+            [self.dataItem addCellClass:[ConferenceTableViewCell class] dataItems:dataList];
         }else{
-            [self.dataItem addCellClass:[TravelTableViewCell class] dataItems:self.finishedInfoItems];
+            [self.dataItem addCellClass:[ConferenceTableViewCell class] dataItems:self.finishedInfoItems];
         }
         
         [self.tableView reloadData];
@@ -211,6 +208,10 @@
     }
     return _dataSource;
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

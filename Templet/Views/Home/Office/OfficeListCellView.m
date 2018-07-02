@@ -34,9 +34,9 @@
     self.officeList = officeList;
     self.position = position;
     if(position==0){
-        self.frame = CGRectMake(0,0,ScreenWidth-40, 200);
+        self.frame = CGRectMake(0,0,SCREEN_WIDTH-40, 200);
     }else{
-        self.frame = CGRectMake(10,self.position*210,ScreenWidth-40, 200);
+        self.frame = CGRectMake(10,self.position*210,SCREEN_WIDTH-40, 200);
     }
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(updateFrameDelete:) name:@"officeListDelete" object:nil];
@@ -58,7 +58,7 @@
     NSInteger position = [info.object integerValue];
     if(position<self.position){
         self.position = self.position-1;
-        self.frame = CGRectMake(10,self.position*210,ScreenWidth-40, 200);
+        self.frame = CGRectMake(10,self.position*210,SCREEN_WIDTH-40, 200);
     }
     NSLog(@"%f",self.frame.origin.y);
     NSLog(@"%f",self.deleteButton.frame.origin.y);

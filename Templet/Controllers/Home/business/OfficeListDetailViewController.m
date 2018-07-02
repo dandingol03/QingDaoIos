@@ -216,7 +216,7 @@
         self.viewCellTag = self.viewCellTag+1;
         for(OfficeInfo* listInfo in self.officeListArray){
             if(self.viewCellTag==0){
-                self.viewCell = [[UIView alloc]initWithFrame:CGRectMake(10, 10, ScreenWidth-40, 200)];
+                self.viewCell = [[UIView alloc]initWithFrame:CGRectMake(10, 10, SCREEN_WIDTH-40, 200)];
                 self.viewCell.tag = self.viewCellTag;
                 OfficeListCellView *officeListCellView = [OfficeListCellView viewFromXib];
                 officeListCellView.delegate = self;

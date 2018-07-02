@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,13 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="335" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcY-i9-Bp3">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcY-i9-Bp3">
                     <rect key="frame" x="0.0" y="0.0" width="335" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4lS-h2-9ak">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lS-h2-9ak" userLabel="left View">
+                            <rect key="frame" x="0.0" y="0.0" width="265" height="200"/>
                             <subviews>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4e-dm-bVW">
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="48"/>
@@ -197,13 +195,11 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLy-dl-9sK">
-                            <rect key="frame" x="280" y="0.0" width="55" height="200"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLy-dl-9sK" userLabel="right View">
+                            <rect key="frame" x="265" y="0.0" width="70" height="200"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ny-N2-eU4">
-                                    <rect key="frame" x="0.0" y="85" width="46" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ny-N2-eU4">
+                                    <rect key="frame" x="0.0" y="85" width="70" height="30"/>
                                     <state key="normal" title="删除">
                                         <color key="titleColor" red="0.33156578650000001" green="0.48241189289999997" blue="0.70314482869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
@@ -213,15 +209,35 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="9Ny-N2-eU4" firstAttribute="leading" secondItem="QLy-dl-9sK" secondAttribute="leading" id="DR6-2c-nhA"/>
+                                <constraint firstAttribute="width" constant="70" id="PdF-ig-m4x"/>
+                                <constraint firstItem="9Ny-N2-eU4" firstAttribute="centerX" secondItem="QLy-dl-9sK" secondAttribute="centerX" id="Z3A-3R-6o3"/>
+                                <constraint firstItem="9Ny-N2-eU4" firstAttribute="centerY" secondItem="QLy-dl-9sK" secondAttribute="centerY" id="laz-bg-RHR"/>
+                            </constraints>
                             <viewLayoutGuide key="safeArea" id="h7W-0X-KnW"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="QLy-dl-9sK" secondAttribute="trailing" id="CZX-GA-a3h"/>
+                        <constraint firstItem="4lS-h2-9ak" firstAttribute="top" secondItem="bcY-i9-Bp3" secondAttribute="top" id="N2d-qs-4kd"/>
+                        <constraint firstAttribute="bottom" secondItem="4lS-h2-9ak" secondAttribute="bottom" id="Vmq-Zg-mLc"/>
+                        <constraint firstItem="QLy-dl-9sK" firstAttribute="height" secondItem="bcY-i9-Bp3" secondAttribute="height" id="cXo-LR-rkL"/>
+                        <constraint firstItem="QLy-dl-9sK" firstAttribute="leading" secondItem="4lS-h2-9ak" secondAttribute="trailing" id="naY-K8-dRh"/>
+                        <constraint firstItem="4lS-h2-9ak" firstAttribute="leading" secondItem="bcY-i9-Bp3" secondAttribute="leading" id="oTJ-rt-Nic"/>
+                        <constraint firstItem="QLy-dl-9sK" firstAttribute="top" secondItem="bcY-i9-Bp3" secondAttribute="top" id="sMG-BN-vIo"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bcY-i9-Bp3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="188-io-6dw"/>
+                <constraint firstItem="bcY-i9-Bp3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3JJ-4W-YAK"/>
+                <constraint firstItem="bcY-i9-Bp3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="8PS-CW-67z"/>
+                <constraint firstItem="bcY-i9-Bp3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GwJ-3M-VfJ"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="0wC-eK-CHC"/>
             <connections>
                 <outlet property="deleteButton" destination="9Ny-N2-eU4" id="9xt-S1-dQs"/>
                 <outlet property="moneyLabel" destination="So1-DT-zHr" id="XoH-9D-SHg"/>
