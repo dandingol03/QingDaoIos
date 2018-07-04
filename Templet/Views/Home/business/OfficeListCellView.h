@@ -2,15 +2,14 @@
 //  OfficeListCellView.h
 //  Templet
 //
-//  Created by 丁一明 on 2018/6/26.
-//  Copyright © 2018年 丁一明. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "OfficeInfo.h"
 //创建协议
 @protocol VcDDelegate <NSObject>
-- (void)deleteOfficeListCell:(NSInteger)position; //声明协议方法
+- (void)deleteOfficeListCell:(NSInteger)position; //删除通知
+- (void)onNotifyMoneyChange;//金钱变动通知
 @end
 
 

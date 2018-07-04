@@ -18,7 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *expenditureLabel;//支出事项
 @property (strong, nonatomic) IBOutlet UILabel *departmentLabel;//当前单位
-@property (strong, nonatomic) IBOutlet UITextField *budgetAmount;//预算金额
+@property (weak, nonatomic) IBOutlet UILabel *budgetAmount;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *cashContent;//用款内容
 @property (strong, nonatomic) IBOutlet UITextField *remark;//备注
@@ -218,6 +219,15 @@
     [officeView passViewOfficeList:self.officeListArray position:self.officeListArray.count-1 parent:self.office_ll];//在这由自己完成高度、宽度设置
     
     [self.office_ll layoutIfNeeded];
+}
+
+-(void)onNotifyMoneyChange{
+    double total=0;
+    for(OfficeInfo *info in self.officeListArray)
+    {
+        total+=[info.money doubleValue];
+    }
+    self.budgetAmount.text=[NSString stringWithFormat:@"%.2f",total];
 }
 
 //cell删除的回调，用于调整height的constaint

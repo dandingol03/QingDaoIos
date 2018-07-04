@@ -48,6 +48,15 @@
 		1A2008CF20E8DE2F0076C253 /* TravelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2008CC20E8DE2E0076C253 /* TravelTableViewCell.m */; };
 		1A2008D020E8DE2F0076C253 /* TravelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2008CD20E8DE2E0076C253 /* TravelTableViewCell.xib */; };
 		1A2008D320E91D160076C253 /* BusinessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2008D120E91D150076C253 /* BusinessInfo.m */; };
+		1A83806E20ECB59100A0E82B /* BaoxiaoOfficeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A83806C20ECB59100A0E82B /* BaoxiaoOfficeCellView.xib */; };
+		1A83806F20ECB59100A0E82B /* BaoxiaoOfficeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83806D20ECB59100A0E82B /* BaoxiaoOfficeCellView.m */; };
+		1A83807220ECB5E700A0E82B /* BaoxiaoOffice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83807120ECB5E700A0E82B /* BaoxiaoOffice.m */; };
+		1A83808020ECC63200A0E82B /* BaoxiaoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83807E20ECC63200A0E82B /* BaoxiaoDetailViewController.m */; };
+		1A83808120ECC63200A0E82B /* BaoxiaoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A83807F20ECC63200A0E82B /* BaoxiaoDetailViewController.xib */; };
+		1A83808420ECD18400A0E82B /* BaoxiaoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83808320ECD18400A0E82B /* BaoxiaoInfo.m */; };
+		1A83808820ED001C00A0E82B /* BaoxiaoZzCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83808720ED001C00A0E82B /* BaoxiaoZzCellView.m */; };
+		1A83808A20ED002D00A0E82B /* BaoxiaoZzCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A83808920ED002D00A0E82B /* BaoxiaoZzCellView.xib */; };
+		1A83808D20ED01CB00A0E82B /* BaoxiaoZz.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A83808C20ED01CB00A0E82B /* BaoxiaoZz.m */; };
 		1AE03A7C20EC7D1B00D22833 /* GoAbroadDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE03A7A20EC7D1B00D22833 /* GoAbroadDetailViewController.m */; };
 		1AE03A7D20EC7D1B00D22833 /* GoAbroadDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE03A7B20EC7D1B00D22833 /* GoAbroadDetailViewController.xib */; };
 		1AE03A8020EC849700D22833 /* GoAbroadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE03A7F20EC849700D22833 /* GoAbroadInfo.m */; };
@@ -272,6 +281,21 @@
 		1A2008CE20E8DE2F0076C253 /* TravelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TravelTableViewCell.h; path = Templet/Views/Home/travel/TravelTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		1A2008D120E91D150076C253 /* BusinessInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessInfo.m; sourceTree = "<group>"; };
 		1A2008D220E91D150076C253 /* BusinessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessInfo.h; sourceTree = "<group>"; };
+		1A83806B20ECB59100A0E82B /* BaoxiaoOfficeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoxiaoOfficeCellView.h; sourceTree = "<group>"; };
+		1A83806C20ECB59100A0E82B /* BaoxiaoOfficeCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaoxiaoOfficeCellView.xib; sourceTree = "<group>"; };
+		1A83806D20ECB59100A0E82B /* BaoxiaoOfficeCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoxiaoOfficeCellView.m; sourceTree = "<group>"; };
+		1A83807020ECB5E700A0E82B /* BaoxiaoOffice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaoxiaoOffice.h; sourceTree = "<group>"; };
+		1A83807120ECB5E700A0E82B /* BaoxiaoOffice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaoxiaoOffice.m; sourceTree = "<group>"; };
+		1A83807D20ECC63200A0E82B /* BaoxiaoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaoxiaoDetailViewController.h; sourceTree = "<group>"; };
+		1A83807E20ECC63200A0E82B /* BaoxiaoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaoxiaoDetailViewController.m; sourceTree = "<group>"; };
+		1A83807F20ECC63200A0E82B /* BaoxiaoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaoxiaoDetailViewController.xib; sourceTree = "<group>"; };
+		1A83808220ECD18400A0E82B /* BaoxiaoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaoxiaoInfo.h; sourceTree = "<group>"; };
+		1A83808320ECD18400A0E82B /* BaoxiaoInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaoxiaoInfo.m; sourceTree = "<group>"; };
+		1A83808620ED001C00A0E82B /* BaoxiaoZzCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaoxiaoZzCellView.h; sourceTree = "<group>"; };
+		1A83808720ED001C00A0E82B /* BaoxiaoZzCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaoxiaoZzCellView.m; sourceTree = "<group>"; };
+		1A83808920ED002D00A0E82B /* BaoxiaoZzCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaoxiaoZzCellView.xib; sourceTree = "<group>"; };
+		1A83808B20ED01CB00A0E82B /* BaoxiaoZz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaoxiaoZz.h; sourceTree = "<group>"; };
+		1A83808C20ED01CB00A0E82B /* BaoxiaoZz.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaoxiaoZz.m; sourceTree = "<group>"; };
 		1AE03A7920EC7D1B00D22833 /* GoAbroadDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoAbroadDetailViewController.h; sourceTree = "<group>"; };
 		1AE03A7A20EC7D1B00D22833 /* GoAbroadDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoAbroadDetailViewController.m; sourceTree = "<group>"; };
 		1AE03A7B20EC7D1B00D22833 /* GoAbroadDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoAbroadDetailViewController.xib; sourceTree = "<group>"; };
@@ -710,6 +734,7 @@
 		1A1282FA20EA3E700078DB92 /* baoxiao */ = {
 			isa = PBXGroup;
 			children = (
+				1A83807C20ECC5DA00A0E82B /* detail */,
 				1A12830020EA3EFD0078DB92 /* BaoXiaoListViewController.h */,
 				1A12830120EA3EFD0078DB92 /* BaoXiaoListViewController.m */,
 				1A12830220EA3EFD0078DB92 /* BaoXiaoListViewController.xib */,
@@ -720,6 +745,8 @@
 		1A12830520EA506D0078DB92 /* baoxiao */ = {
 			isa = PBXGroup;
 			children = (
+				1A83808520ECFFE600A0E82B /* zz */,
+				1A83806A20ECB52A00A0E82B /* office */,
 				1A12830720EA50860078DB92 /* BaoXiaoTableViewCell.h */,
 				1A12830620EA50860078DB92 /* BaoXiaoTableViewCell.m */,
 				1A12830820EA50860078DB92 /* BaoXiaoTableViewCell.xib */,
@@ -767,6 +794,36 @@
 			);
 			name = travel;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1A83806A20ECB52A00A0E82B /* office */ = {
+			isa = PBXGroup;
+			children = (
+				1A83806B20ECB59100A0E82B /* BaoxiaoOfficeCellView.h */,
+				1A83806D20ECB59100A0E82B /* BaoxiaoOfficeCellView.m */,
+				1A83806C20ECB59100A0E82B /* BaoxiaoOfficeCellView.xib */,
+			);
+			path = office;
+			sourceTree = "<group>";
+		};
+		1A83807C20ECC5DA00A0E82B /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				1A83807D20ECC63200A0E82B /* BaoxiaoDetailViewController.h */,
+				1A83807E20ECC63200A0E82B /* BaoxiaoDetailViewController.m */,
+				1A83807F20ECC63200A0E82B /* BaoxiaoDetailViewController.xib */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		1A83808520ECFFE600A0E82B /* zz */ = {
+			isa = PBXGroup;
+			children = (
+				1A83808620ED001C00A0E82B /* BaoxiaoZzCellView.h */,
+				1A83808720ED001C00A0E82B /* BaoxiaoZzCellView.m */,
+				1A83808920ED002D00A0E82B /* BaoxiaoZzCellView.xib */,
+			);
+			path = zz;
 			sourceTree = "<group>";
 		};
 		1AE03A7820EC7D0800D22833 /* detail */ = {
@@ -832,7 +889,7 @@
 			path = CCTableDataSource;
 			sourceTree = "<group>";
 		};
-		2A0AEEA620D00DA700FB902F /* Office */ = {
+		2A0AEEA620D00DA700FB902F /* business */ = {
 			isa = PBXGroup;
 			children = (
 				2A0AEEA720D00E3200FB902F /* OfficeMainTableViewCell.h */,
@@ -842,7 +899,7 @@
 				2AD4758720E1E9C8005D98A2 /* OfficeListCellView.m */,
 				2AD4758920E1E9ED005D98A2 /* OfficeListCellView.xib */,
 			);
-			path = Office;
+			path = business;
 			sourceTree = "<group>";
 		};
 		2A3A3C1C20CCDAF500B55178 /* Verify */ = {
@@ -861,7 +918,7 @@
 				1A1282C520EA1E800078DB92 /* conference */,
 				1A2008CB20E8DE1E0076C253 /* travel */,
 				2AA3F8AD20D7EABE00CEEE44 /* TodoList */,
-				2A0AEEA620D00DA700FB902F /* Office */,
+				2A0AEEA620D00DA700FB902F /* business */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1132,6 +1189,12 @@
 				1A10FB5B20EC681700383FCD /* JdInfo.m */,
 				1AE03A7E20EC849700D22833 /* GoAbroadInfo.h */,
 				1AE03A7F20EC849700D22833 /* GoAbroadInfo.m */,
+				1A83807020ECB5E700A0E82B /* BaoxiaoOffice.h */,
+				1A83807120ECB5E700A0E82B /* BaoxiaoOffice.m */,
+				1A83808220ECD18400A0E82B /* BaoxiaoInfo.h */,
+				1A83808320ECD18400A0E82B /* BaoxiaoInfo.m */,
+				1A83808B20ED01CB00A0E82B /* BaoxiaoZz.h */,
+				1A83808C20ED01CB00A0E82B /* BaoxiaoZz.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1538,6 +1601,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A83808120ECC63200A0E82B /* BaoxiaoDetailViewController.xib in Resources */,
 				1A1282C420EA1CE20078DB92 /* ConferenceListViewController.xib in Resources */,
 				2AD4758A20E1E9ED005D98A2 /* OfficeListCellView.xib in Resources */,
 				2A6E1CBD20CAB1FF002FC5C0 /* LoginViewController.xib in Resources */,
@@ -1573,6 +1637,7 @@
 				2AE2921C20E3759D005692D5 /* radio_btn_off.png in Resources */,
 				1AE03A8620EC894900D22833 /* NewBusinessUIViewController.xib in Resources */,
 				2A61575D20D8913300B7F0D9 /* README.md in Resources */,
+				1A83808A20ED002D00A0E82B /* BaoxiaoZzCellView.xib in Resources */,
 				1A1282F920EA39020078DB92 /* GoAbroadTableViewCell.xib in Resources */,
 				2AE2922320E3759D005692D5 /* 添加@3x.png in Resources */,
 				1A1282E120EA24D70078DB92 /* CultivateTableViewCell.xib in Resources */,
@@ -1582,6 +1647,7 @@
 				2AA3F8AC20D7E46400CEEE44 /* TodoListViewController.xib in Resources */,
 				1A12830420EA3EFD0078DB92 /* BaoXiaoListViewController.xib in Resources */,
 				2A661C0120C8115F00A32173 /* PersonMainViewController.xib in Resources */,
+				1A83806E20ECB59100A0E82B /* BaoxiaoOfficeCellView.xib in Resources */,
 				2AE2921E20E3759D005692D5 /* radio_btn_on.png in Resources */,
 				1A12830A20EA50860078DB92 /* BaoXiaoTableViewCell.xib in Resources */,
 				2A661BE020C80C3E00A32173 /* Main.storyboard in Resources */,
@@ -1640,6 +1706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A83808020ECC63200A0E82B /* BaoxiaoDetailViewController.m in Sources */,
 				2A24F2B020D3ACDA0013AD61 /* DYMHTTPManager.m in Sources */,
 				1A19015B20EB891900065CD6 /* JdDetailViewController.m in Sources */,
 				1AE03A8020EC849700D22833 /* GoAbroadInfo.m in Sources */,
@@ -1712,15 +1779,19 @@
 				2AA3F8AB20D7E46400CEEE44 /* TodoListViewController.m in Sources */,
 				2AE2921620E3759D005692D5 /* ELCAsset.m in Sources */,
 				2A3A3C5C20CD364000B55178 /* UIImageView+WebCache.m in Sources */,
+				1A83808820ED001C00A0E82B /* BaoxiaoZzCellView.m in Sources */,
 				2A661C0920C8135E00A32173 /* UIView+Util.m in Sources */,
 				2A6E1CF120CABB78002FC5C0 /* IQUITextFieldView+Additions.m in Sources */,
 				2A0AEEA220D00B4B00FB902F /* CCBaseTableHeaderView.m in Sources */,
+				1A83808D20ED01CB00A0E82B /* BaoxiaoZz.m in Sources */,
 				1A0F3AC920EB4D4C002BE0F5 /* CultivateInfo.m in Sources */,
 				2A0AEEA320D00B4B00FB902F /* CCBaseTableFooterView.m in Sources */,
 				2A61574520D8912900B7F0D9 /* MJRefreshStateHeader.m in Sources */,
 				1A2008D320E91D160076C253 /* BusinessInfo.m in Sources */,
 				2A6E1CF920CABB78002FC5C0 /* IQToolbar.m in Sources */,
+				1A83808420ECD18400A0E82B /* BaoxiaoInfo.m in Sources */,
 				2A6E1CFA20CABB78002FC5C0 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				1A83807220ECB5E700A0E82B /* BaoxiaoOffice.m in Sources */,
 				1A12830F20EA63D30078DB92 /* TravelDetailViewController.m in Sources */,
 				2A6E1CBC20CAB1FF002FC5C0 /* LoginViewController.m in Sources */,
 				1A0F3AC520EB499A002BE0F5 /* CultivateDetailViewController.m in Sources */,
@@ -1786,6 +1857,7 @@
 				2A61573420D8912900B7F0D9 /* UIScrollView+MJRefresh.m in Sources */,
 				2A61576220D8913300B7F0D9 /* ActionSheetDistancePicker.m in Sources */,
 				2AE2921720E3759D005692D5 /* ELCAssetCell.m in Sources */,
+				1A83806F20ECB59100A0E82B /* BaoxiaoOfficeCellView.m in Sources */,
 				2A61573920D8912900B7F0D9 /* MJRefreshHeader.m in Sources */,
 				2A3A3C5D20CD364000B55178 /* UIView+WebCacheOperation.m in Sources */,
 				2A6E1CF520CABB78002FC5C0 /* IQTextView.m in Sources */,

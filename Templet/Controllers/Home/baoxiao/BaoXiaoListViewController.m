@@ -12,7 +12,7 @@
 #import "BobLoadingHelper.h"
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
-#import "OfficeListDetailViewController.h"
+#import "BaoxiaoDetailViewController.h"
 #include "BaoXiaoTableViewCell.h"
 
 @interface BaoXiaoListViewController ()<UITableViewDataSource,UITableViewDataSource>
@@ -70,8 +70,8 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
+        BaoxiaoDetailViewController* officeListDetailVc = [[BaoxiaoDetailViewController alloc]init];
+        officeListDetailVc.reimbId =  data.reimbId;
         [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
         
         

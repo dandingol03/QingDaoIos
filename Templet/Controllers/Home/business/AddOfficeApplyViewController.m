@@ -45,8 +45,9 @@
 @property (nonatomic, assign)NSInteger addPhotoButtonId;
 
 
-//officeList
+
 @property (nonatomic, strong) NSMutableArray * officeListArray;
+@property (nonatomic, strong) NSMutableArray * zzListArray;
 
 @property (nonatomic, strong) IBOutlet UIView *view3;
 @property (nonatomic, strong) IBOutlet UIView *viewCell;

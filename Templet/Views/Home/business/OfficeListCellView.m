@@ -127,6 +127,7 @@
             self.moneyLabel.text = [NSString stringWithFormat:@"%0.2f",univalent*number];
             officeInfo.univalent = self.univalentField.text;
             officeInfo.money = self.moneyLabel.text;
+            [_delegate onNotifyMoneyChange];
         }
             break;
         case 4:{
@@ -135,6 +136,7 @@
             self.moneyLabel.text = [NSString stringWithFormat:@"%0.2f",univalent*number];
             officeInfo.number = self.numberField.text;
             officeInfo.money = self.moneyLabel.text;
+            [_delegate onNotifyMoneyChange];
         }
             break;
         case 5:{

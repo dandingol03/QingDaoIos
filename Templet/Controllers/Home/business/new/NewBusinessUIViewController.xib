@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewBusinessUIViewController">
             <connections>
-                <outlet property="budgetAmount" destination="nxf-rW-5Dr" id="KxU-7E-WUK"/>
+                <outlet property="budgetAmount" destination="2Dm-zb-OA0" id="4Zs-DJ-9ld"/>
                 <outlet property="cashContent" destination="SR8-Ze-Q7y" id="YQ3-0Y-5kV"/>
                 <outlet property="contentView" destination="Bk3-rm-Dr9" id="GnA-i1-kww"/>
                 <outlet property="departmentLabel" destination="ooA-qg-3ri" id="kqd-H4-7v8"/>
@@ -110,20 +110,20 @@
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nxf-rW-5Dr" userLabel="budget amount">
-                                            <rect key="frame" x="115.5" y="10" width="229.5" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dm-zb-OA0">
+                                            <rect key="frame" x="120.5" y="25.5" width="224.5" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="nxf-rW-5Dr" secondAttribute="trailing" constant="10" id="BTn-Af-DAW"/>
-                                        <constraint firstItem="nxf-rW-5Dr" firstAttribute="centerY" secondItem="Uc5-Nw-90f" secondAttribute="centerY" id="JKu-Zt-1xx"/>
+                                        <constraint firstItem="2Dm-zb-OA0" firstAttribute="leading" secondItem="5P2-Mi-gVm" secondAttribute="trailing" constant="25" id="7z5-gt-fcj"/>
+                                        <constraint firstAttribute="trailing" secondItem="2Dm-zb-OA0" secondAttribute="trailing" constant="10" id="Dtb-IH-q9L"/>
                                         <constraint firstItem="5P2-Mi-gVm" firstAttribute="leading" secondItem="Uc5-Nw-90f" secondAttribute="leading" constant="30" id="RDP-aA-Ly7"/>
                                         <constraint firstItem="5P2-Mi-gVm" firstAttribute="centerY" secondItem="Uc5-Nw-90f" secondAttribute="centerY" id="SgR-u7-VZ0"/>
-                                        <constraint firstItem="nxf-rW-5Dr" firstAttribute="leading" secondItem="5P2-Mi-gVm" secondAttribute="trailing" constant="20" id="Tth-Tm-DMV"/>
+                                        <constraint firstItem="2Dm-zb-OA0" firstAttribute="centerY" secondItem="Uc5-Nw-90f" secondAttribute="centerY" id="xxQ-Yz-FZj"/>
                                         <constraint firstAttribute="height" constant="50" id="zCx-D8-Fal"/>
                                     </constraints>
                                 </view>
