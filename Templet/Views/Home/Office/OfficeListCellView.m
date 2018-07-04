@@ -24,20 +24,60 @@
 
 @property (strong, nonatomic) NSMutableArray* officeList;
 @property (assign, nonatomic) NSInteger position;
+@property (weak,nonatomic) UIView *mParent;
+@property (strong,nonatomic) NSLayoutConstraint * topC;
 
 @end
 
 @implementation OfficeListCellView
 
--(void)passViewOfficeList:(NSMutableArray *)officeList position:(NSInteger)position
+
+-(void)passViewOfficeList:(NSMutableArray *)officeList position:(NSInteger)position parent:(id)parent
 {
     self.officeList = officeList;
     self.position = position;
+    self.mParent=parent;
+    //设置约束
+    self.translatesAutoresizingMaskIntoConstraints=NO;
+    //leading约束
+    [parent addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:parent attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0]];
+    //trailing约束
+    [parent addConstraint:[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:parent attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
+    
+    //top约束
+    if(self.topC!=nil)
+        [parent removeConstraint:self.topC];
+    self.topC=[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:parent attribute:NSLayoutAttributeTop multiplier:1.0 constant:self.position*210];
+    [parent addConstraint:self.topC];
+    
+    //height约束
+    [parent addConstraint: [NSLayoutConstraint constraintWithItem:self
+                                                        attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1 constant:210]];
+
     if(position==0){
         self.frame = CGRectMake(0,0,SCREEN_WIDTH-40, 200);
     }else{
         self.frame = CGRectMake(10,self.position*210,SCREEN_WIDTH-40, 200);
     }
+    
+    //添加监听
+    NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(updateFrameDelete:) name:@"officeListDelete" object:nil];
+}
+
+
+-(void)passViewOfficeList:(NSMutableArray *)officeList position:(NSInteger)position
+{
+    self.officeList = officeList;
+    self.position = position;
+
+    if(position==0){
+        self.frame = CGRectMake(0,0,SCREEN_WIDTH-40, 200);
+    }else{
+        self.frame = CGRectMake(10,self.position*210,SCREEN_WIDTH-40, 200);
+    }
+    
+    //添加监听
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(updateFrameDelete:) name:@"officeListDelete" object:nil];
 }
@@ -58,6 +98,11 @@
     NSInteger position = [info.object integerValue];
     if(position<self.position){
         self.position = self.position-1;
+        //添加新的top约束
+        if(self.topC!=nil)
+            [self.mParent removeConstraint:self.topC];
+        self.topC=[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.mParent attribute:NSLayoutAttributeTop multiplier:1.0 constant:self.position*210];
+        [self.mParent addConstraint:self.topC];
         self.frame = CGRectMake(10,self.position*210,SCREEN_WIDTH-40, 200);
     }
     NSLog(@"%f",self.frame.origin.y);

@@ -13,6 +13,7 @@
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
 #import "OfficeListDetailViewController.h"
+#import "JdDetailViewController.h"
 #import "JdTableViewCell.h"
 
 
@@ -70,9 +71,9 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
-        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
+        JdDetailViewController* jdDetailVc = [[JdDetailViewController alloc]init];
+        jdDetailVc.expendId =  data.expendId;
+        [weakSelf.navigationController pushViewController:jdDetailVc animated:YES];
         
         
     }];

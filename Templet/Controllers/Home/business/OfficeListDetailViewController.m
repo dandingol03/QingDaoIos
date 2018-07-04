@@ -76,10 +76,12 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"fooder-bg11"] forBarMetrics:UIBarMetricsDefault];
     
     self.viewCellTag = -1;
+    
     [self getApplyInfo];
     [self getDetailInfo:self.expendId];
     self.isFold = NO;
     
+    //frame的约束调整
     self.scrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.contentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 1300);
     self.view1.frame = CGRectMake(10, 0, SCREEN_WIDTH-20, 200);
@@ -220,7 +222,7 @@
                 self.viewCell.tag = self.viewCellTag;
                 OfficeListCellView *officeListCellView = [OfficeListCellView viewFromXib];
                 officeListCellView.delegate = self;
-                [officeListCellView passViewOfficeList:self.officeListArray position:self.viewCellTag];
+                [officeListCellView passViewOfficeList:self.officeListArray position:self.viewCellTag ];
                 [officeListCellView setDefaultText:listInfo];
                 [self.viewCell addSubview:officeListCellView];
                 [self.view3 addSubview:self.viewCell];

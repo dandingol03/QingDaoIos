@@ -13,6 +13,7 @@
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
 #import "OfficeListDetailViewController.h"
+#import "TravelDetailViewController.h"
 #import "TravelTableViewCell.h"
 
 
@@ -72,9 +73,9 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
-        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
+        TravelDetailViewController* travelDetailVc = [[TravelDetailViewController alloc]init];
+        travelDetailVc.expendId =  data.expendId;
+        [weakSelf.navigationController pushViewController:travelDetailVc animated:YES];
         
         
     }];

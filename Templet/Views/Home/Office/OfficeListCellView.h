@@ -17,7 +17,7 @@
 @interface OfficeListCellView : UIView
 
 @property (nonatomic, weak) id<VcDDelegate> delegate;
-
 -(void)passViewOfficeList:(NSMutableArray *)officeList position:(NSInteger)position;
+-(void)passViewOfficeList:(NSMutableArray *)officeList position:(NSInteger)position parent:(id) parent;
 -(void)setDefaultText:(OfficeInfo*)officeInfo;
 @end

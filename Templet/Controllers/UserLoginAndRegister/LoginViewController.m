@@ -78,10 +78,12 @@
                                              NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                                              [defaults setObject:username forKey:@"username"];
                                              [defaults setObject:password forKey:@"password"];
+                                             
                                              AppDelegate* appDelegate = [AppDelegate shareDelegate];
                                              NSData *strData = dic;
                                              NSDictionary *content = [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:nil];//转换数据格式
                                              NSLog(@"responseObject-->%@",content);
+                                             //存储personId
                                              appDelegate.personId = [[content objectForKey:@"data"] objectForKey:@"personId"];
                                              [self gotoHome];
             

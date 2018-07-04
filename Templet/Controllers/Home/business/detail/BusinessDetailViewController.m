@@ -4,13 +4,13 @@
 //
 //
 
-#import "TravelDetailViewController.h"
+#import "BusinessDetailViewController.h"
 #import "OfficeDetailInfo.h"
 #import "OfficeInfo.h"
 #import "ApplyInitInfo.h"
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
-@interface TravelDetailViewController ()
+@interface BusinessDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIView *office_ll;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -35,16 +35,16 @@
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, assign) BOOL isFold;//是否折叠附件
 
-@property(strong,nonatomic) OfficeDetailInfo* info;
-
+@property(strong,nonatomic) NSMutableArray *officeListArray;
+@property(strong,nonatomic) OfficeDetailInfo *info;
+@property(strong,nonatomic) NSLayoutConstraint *heightConstraint;
+@property(strong,nonatomic) NSLayoutConstraint *contentHc;
 
 @end
 
-@implementation TravelDetailViewController
+@implementation BusinessDetailViewController
 
-NSMutableArray * officeListArray;
-NSLayoutConstraint *heightConstraint;
-NSLayoutConstraint *contentHc;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,7 +54,7 @@ NSLayoutConstraint *contentHc;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"fooder-bg11"] forBarMetrics:UIBarMetricsDefault];
     
-    officeListArray=[[NSMutableArray alloc] init];
+    self.officeListArray=[[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
     //[self.navigationController setNavigationBarHidden:YES animated:YES];
     
@@ -101,12 +101,12 @@ NSLayoutConstraint *contentHc;
                                          NSDictionary *data = [content objectForKey:@"data"];
                                          self.info = [OfficeDetailInfo objectWithKeyValues:data];
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         officeListArray = [OfficeInfo objectArrayWithKeyValuesArray:array];
+                                         self.officeListArray = [OfficeInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          [self.loadingHelper hideCommittingView:YES];
                                          
                                          [self setDefaultInfo:self.info];
-                                         [self initOfficeList:officeListArray];
+                                         [self initOfficeList:self.officeListArray];
                                          
                                      }
                                       WithFailurBlock:^(NSError *error) {
@@ -121,26 +121,26 @@ NSLayoutConstraint *contentHc;
     NSInteger count = officeListArray.count;
   
     //添加office_ll的高度约束
-    if(heightConstraint!=nil)
+    if(self.heightConstraint!=nil)
     {
-        [self.office_ll removeConstraint:heightConstraint];
+        [self.office_ll removeConstraint:self.heightConstraint];
     }
-    heightConstraint = [NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
+    self.heightConstraint = [NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                                      constant:self.office_ll.frame.size.height+ 210*count];
-    [self.office_ll addConstraints:@[heightConstraint]];
+    [self.office_ll addConstraints:@[self.heightConstraint]];
     
     
     self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height+210*count);
     self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height+210*count+20);
     //添加contentView的高度约束
-    if(contentHc!=nil)
+    if(self.contentHc!=nil)
     {
-        [self.contentView removeConstraint:contentHc];
+        [self.contentView removeConstraint:self.contentHc];
     }
     NSInteger height=self.contentView.frame.size.height;
-    contentHc=[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
+    self.contentHc=[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                             constant:self.contentView.frame.size.height];
-    [self.contentView addConstraint:contentHc];
+    [self.contentView addConstraint:self.contentHc];
     
     
     if(officeListArray!=nil&&officeListArray.count!=0){
@@ -194,35 +194,35 @@ NSLayoutConstraint *contentHc;
 
 - (IBAction)addOfficeListAction:(id)sender {
     OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
-    [officeListArray addObject:officeInfo];
+    [self.officeListArray addObject:officeInfo];
     
     
     CGFloat view3X = self.office_ll.frame.origin.x;
     CGFloat view3Y = self.office_ll.frame.origin.y;
     
     
-    if(heightConstraint!=nil)
+    if(self.heightConstraint!=nil)
     {
-        [self.office_ll removeConstraint:heightConstraint];
+        [self.office_ll removeConstraint:self.heightConstraint];
     }
     
-    heightConstraint = [NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
+    self.heightConstraint = [NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                                      constant:self.office_ll.frame.size.height+ 210];
     
     
     
-    [self.office_ll addConstraints:@[heightConstraint]];
+    [self.office_ll addConstraints:@[self.heightConstraint]];
     
     
     self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height+210);
-    if(contentHc!=nil)
+    if(self.contentHc!=nil)
     {
-        [self.contentView removeConstraint:contentHc];
+        [self.contentView removeConstraint:self.contentHc];
     }
     NSInteger height=self.contentView.frame.size.height;
-    contentHc=[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
+    self.contentHc=[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                             constant:self.contentView.frame.size.height];
-    [self.contentView addConstraint:contentHc];
+    [self.contentView addConstraint:self.contentHc];
     
     //   self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height+210);
     
@@ -234,7 +234,7 @@ NSLayoutConstraint *contentHc;
     [officeView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self.office_ll addSubview:officeView];
-    [officeView passViewOfficeList:officeListArray position:officeListArray.count-1 parent:self.office_ll];//在这由自己完成高度、宽度设置
+    [officeView passViewOfficeList:self.officeListArray position:self.officeListArray.count-1 parent:self.office_ll];//在这由自己完成高度、宽度设置
     
     
     [self.office_ll layoutIfNeeded];
@@ -245,16 +245,16 @@ NSLayoutConstraint *contentHc;
 -(void)deleteOfficeListCell:(NSInteger)position
 {
     //更新heightConstraint
-    [self.office_ll removeConstraint:heightConstraint];
-    [heightConstraint setConstant:self.office_ll.frame.size.height-210];
-    [self.office_ll addConstraint:heightConstraint];
+    [self.office_ll removeConstraint:self.heightConstraint];
+    [self.heightConstraint setConstant:self.office_ll.frame.size.height-210];
+    [self.office_ll addConstraint:self.heightConstraint];
     
     self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height-210);
-    if(contentHc!=nil)
-        [self.contentView removeConstraint:contentHc];
-    contentHc=[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
+    if(self.contentHc!=nil)
+        [self.contentView removeConstraint:self.contentHc];
+    self.contentHc=[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                             constant:self.contentView.frame.size.height];
-    [self.contentView addConstraint:contentHc];
+    [self.contentView addConstraint:self.contentHc];
     
     [self.office_ll layoutIfNeeded];
     

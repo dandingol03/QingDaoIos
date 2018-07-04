@@ -13,7 +13,7 @@
 #import "ConferenceTableViewCell.h"
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
-#import "OfficeListDetailViewController.h"
+#import "ConferenceDetailViewController.h"
 
 @interface ConferenceListViewController () <UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
@@ -71,9 +71,9 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
-        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
+        ConferenceDetailViewController* conferenceDetailVc = [[ConferenceDetailViewController alloc]init];
+        conferenceDetailVc.expendId =  data.expendId;
+        [weakSelf.navigationController pushViewController:conferenceDetailVc animated:YES];
         
         
     }];

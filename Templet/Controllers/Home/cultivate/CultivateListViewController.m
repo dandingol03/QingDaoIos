@@ -13,8 +13,8 @@
 #import "BobLoadingHelper.h"
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
-#import "OfficeListDetailViewController.h"
 #import "CultivateTableViewCell.h"
+#include "CultivateDetailViewController.h"
 
 @interface CultivateListViewController () <UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
@@ -71,9 +71,9 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
-        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
+        CultivateDetailViewController* cultivateDetailVc = [[CultivateDetailViewController alloc]init];
+        cultivateDetailVc.expendId =  data.expendId;
+        [weakSelf.navigationController pushViewController:cultivateDetailVc animated:YES];
         
         
     }];

@@ -5,6 +5,7 @@
 
 #import "OfficeMainViewController.h"
 #import "AddOfficeApplyViewController.h"
+#import "NewBusinessUIViewController.h"
 #import "CCTableDataItem.h"
 #import "CCTableViewDelegate.h"
 #import "CCTableViewDataSource.h"
@@ -14,6 +15,7 @@
 #import "BusinessInfo.h"
 #import "BobLoadingHelper.h"
 #import "OfficeListDetailViewController.h"
+#import "BusinessDetailViewController.h"
 
 
 @interface OfficeMainViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -80,9 +82,9 @@
 
 //右上角加号
 -(void)addingOfficeApply{
-    AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
-    addOfficeVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:addOfficeVc animated:YES];
+    NewBusinessUIViewController *newBusinessVc = [[NewBusinessUIViewController alloc]init];
+    newBusinessVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newBusinessVc animated:YES];
 }
 
 - (IBAction)switchOver:(UIButton *)sender {
@@ -117,7 +119,7 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
         BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        OfficeListDetailViewController* officeListDetailVc = [[OfficeListDetailViewController alloc]init];
+        BusinessDetailViewController* officeListDetailVc = [[BusinessDetailViewController alloc]init];
         officeListDetailVc.expendId =  data.expendId;
         [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
         
