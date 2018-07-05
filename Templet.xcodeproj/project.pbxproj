@@ -41,6 +41,8 @@
 		1A12830A20EA50860078DB92 /* BaoXiaoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A12830820EA50860078DB92 /* BaoXiaoTableViewCell.xib */; };
 		1A12830F20EA63D30078DB92 /* TravelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A12830D20EA63D30078DB92 /* TravelDetailViewController.m */; };
 		1A12831020EA63D30078DB92 /* TravelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A12830E20EA63D30078DB92 /* TravelDetailViewController.xib */; };
+		1A15DA4D20ED2CDE00A576AA /* NewBaoxiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A15DA4B20ED2CDE00A576AA /* NewBaoxiaoViewController.m */; };
+		1A15DA4E20ED2CDE00A576AA /* NewBaoxiaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A15DA4C20ED2CDE00A576AA /* NewBaoxiaoViewController.xib */; };
 		1A19015B20EB891900065CD6 /* JdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A19015920EB891900065CD6 /* JdDetailViewController.m */; };
 		1A19015C20EB891A00065CD6 /* JdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A19015A20EB891900065CD6 /* JdDetailViewController.xib */; };
 		1A2008C820E8C68E0076C253 /* TravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2008C520E8C68D0076C253 /* TravelViewController.m */; };
@@ -270,6 +272,9 @@
 		1A12830C20EA63D30078DB92 /* TravelDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TravelDetailViewController.h; sourceTree = "<group>"; };
 		1A12830D20EA63D30078DB92 /* TravelDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TravelDetailViewController.m; sourceTree = "<group>"; };
 		1A12830E20EA63D30078DB92 /* TravelDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelDetailViewController.xib; sourceTree = "<group>"; };
+		1A15DA4A20ED2CDE00A576AA /* NewBaoxiaoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBaoxiaoViewController.h; sourceTree = "<group>"; };
+		1A15DA4B20ED2CDE00A576AA /* NewBaoxiaoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBaoxiaoViewController.m; sourceTree = "<group>"; };
+		1A15DA4C20ED2CDE00A576AA /* NewBaoxiaoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewBaoxiaoViewController.xib; sourceTree = "<group>"; };
 		1A19015820EB891900065CD6 /* JdDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JdDetailViewController.h; sourceTree = "<group>"; };
 		1A19015920EB891900065CD6 /* JdDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JdDetailViewController.m; sourceTree = "<group>"; };
 		1A19015A20EB891900065CD6 /* JdDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JdDetailViewController.xib; sourceTree = "<group>"; };
@@ -734,6 +739,7 @@
 		1A1282FA20EA3E700078DB92 /* baoxiao */ = {
 			isa = PBXGroup;
 			children = (
+				1A15DA4920ED2CB600A576AA /* new */,
 				1A83807C20ECC5DA00A0E82B /* detail */,
 				1A12830020EA3EFD0078DB92 /* BaoXiaoListViewController.h */,
 				1A12830120EA3EFD0078DB92 /* BaoXiaoListViewController.m */,
@@ -762,6 +768,16 @@
 				1A12830E20EA63D30078DB92 /* TravelDetailViewController.xib */,
 			);
 			path = detail;
+			sourceTree = "<group>";
+		};
+		1A15DA4920ED2CB600A576AA /* new */ = {
+			isa = PBXGroup;
+			children = (
+				1A15DA4A20ED2CDE00A576AA /* NewBaoxiaoViewController.h */,
+				1A15DA4B20ED2CDE00A576AA /* NewBaoxiaoViewController.m */,
+				1A15DA4C20ED2CDE00A576AA /* NewBaoxiaoViewController.xib */,
+			);
+			path = new;
 			sourceTree = "<group>";
 		};
 		1A19015720EB880500065CD6 /* detail */ = {
@@ -1621,6 +1637,7 @@
 				2A61573320D8912900B7F0D9 /* MJRefresh.bundle in Resources */,
 				1A1282BB20E9CBF80078DB92 /* detail.xib in Resources */,
 				2A0AEEAB20D00E3200FB902F /* OfficeMainTableViewCell.xib in Resources */,
+				1A15DA4E20ED2CDE00A576AA /* NewBaoxiaoViewController.xib in Resources */,
 				1A1282BD20E9D30B0078DB92 /* VerifyMainViewController.xib in Resources */,
 				1AE03A7D20EC7D1B00D22833 /* GoAbroadDetailViewController.xib in Resources */,
 				2A661C0E20C8178A00A32173 /* SettingMainViewController.xib in Resources */,
@@ -1713,6 +1730,7 @@
 				2A661C0D20C8178A00A32173 /* SettingMainViewController.m in Sources */,
 				2AA9358220DA2FC200397077 /* MBProgressHUD.m in Sources */,
 				2A3A3C5520CD364000B55178 /* SDWebImageManager.m in Sources */,
+				1A15DA4D20ED2CDE00A576AA /* NewBaoxiaoViewController.m in Sources */,
 				2A6E1CED20CABB78002FC5C0 /* IQKeyboardManager.m in Sources */,
 				2A61576020D8913300B7F0D9 /* ActionSheetCustomPicker.m in Sources */,
 				1A1282CF20EA201E0078DB92 /* ConferenceTableViewCell.m in Sources */,

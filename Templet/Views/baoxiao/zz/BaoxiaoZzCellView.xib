@@ -182,8 +182,6 @@
                 <outlet property="amount" destination="8te-sL-AsH" id="MGq-ak-ULk"/>
                 <outlet property="bankName" destination="vWn-FT-x57" id="MgH-2h-qpc"/>
                 <outlet property="bankNum" destination="BML-7P-8oN" id="jfh-Y6-a14"/>
-                <outlet property="nameField" destination="BML-7P-8oN" id="266-y3-Myz"/>
-                <outlet property="remarksField" destination="vWn-FT-x57" id="ont-zx-DJO"/>
             </connections>
             <point key="canvasLocation" x="63.5" y="53"/>
         </view>
