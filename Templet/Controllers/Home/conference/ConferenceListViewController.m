@@ -14,6 +14,7 @@
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
 #import "ConferenceDetailViewController.h"
+#import "NewConferenceViewController.h"
 
 @interface ConferenceListViewController () <UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
@@ -103,9 +104,9 @@
 
 //右上角加号
 -(void)addingOfficeApply{
-    AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
-    addOfficeVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:addOfficeVc animated:YES];
+    NewConferenceViewController *newConferenceVc = [[NewConferenceViewController alloc]init];
+    newConferenceVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newConferenceVc animated:YES];
 }
 
 #pragma mark http

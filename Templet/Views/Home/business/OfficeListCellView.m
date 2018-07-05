@@ -84,7 +84,7 @@
 
 -(void)setDefaultText:(OfficeInfo*)officeInfo{
     self.nameField.text =officeInfo.name;
-    self.standField.text = officeInfo.stand;
+    self.standField.text = officeInfo.standard;
     self.univalentField.text = officeInfo.univalent;
     self.numberField.text = officeInfo.number;
     self.moneyLabel.text = officeInfo.money;
@@ -118,7 +118,7 @@
         }
             break;
         case 2:{
-            officeInfo.stand = self.standField.text;
+            officeInfo.standard = self.standField.text;
         }
             break;
         case 3:{

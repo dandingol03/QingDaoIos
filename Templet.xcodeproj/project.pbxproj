@@ -43,6 +43,13 @@
 		1A12831020EA63D30078DB92 /* TravelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A12830E20EA63D30078DB92 /* TravelDetailViewController.xib */; };
 		1A15DA4D20ED2CDE00A576AA /* NewBaoxiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A15DA4B20ED2CDE00A576AA /* NewBaoxiaoViewController.m */; };
 		1A15DA4E20ED2CDE00A576AA /* NewBaoxiaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A15DA4C20ED2CDE00A576AA /* NewBaoxiaoViewController.xib */; };
+		1A18714D20EDC1AB00FA94EE /* TravelInfoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18714C20EDC1AB00FA94EE /* TravelInfoCellView.m */; };
+		1A18714F20EDC1F000FA94EE /* TravelInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A18714E20EDC1F000FA94EE /* TravelInfoCellView.xib */; };
+		1A18715220EDF50800FA94EE /* TravelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18715120EDF50800FA94EE /* TravelInfo.m */; };
+		1A18715720EE156800FA94EE /* NewTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18715520EE156800FA94EE /* NewTravelViewController.m */; };
+		1A18715820EE156800FA94EE /* NewTravelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A18715620EE156800FA94EE /* NewTravelViewController.xib */; };
+		1A18715D20EE32F800FA94EE /* NewConferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A18715B20EE32F800FA94EE /* NewConferenceViewController.m */; };
+		1A18715E20EE32F800FA94EE /* NewConferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A18715C20EE32F800FA94EE /* NewConferenceViewController.xib */; };
 		1A19015B20EB891900065CD6 /* JdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A19015920EB891900065CD6 /* JdDetailViewController.m */; };
 		1A19015C20EB891A00065CD6 /* JdDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A19015A20EB891900065CD6 /* JdDetailViewController.xib */; };
 		1A2008C820E8C68E0076C253 /* TravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2008C520E8C68D0076C253 /* TravelViewController.m */; };
@@ -275,6 +282,17 @@
 		1A15DA4A20ED2CDE00A576AA /* NewBaoxiaoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBaoxiaoViewController.h; sourceTree = "<group>"; };
 		1A15DA4B20ED2CDE00A576AA /* NewBaoxiaoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBaoxiaoViewController.m; sourceTree = "<group>"; };
 		1A15DA4C20ED2CDE00A576AA /* NewBaoxiaoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewBaoxiaoViewController.xib; sourceTree = "<group>"; };
+		1A18714B20EDC1AB00FA94EE /* TravelInfoCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TravelInfoCellView.h; sourceTree = "<group>"; };
+		1A18714C20EDC1AB00FA94EE /* TravelInfoCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TravelInfoCellView.m; sourceTree = "<group>"; };
+		1A18714E20EDC1F000FA94EE /* TravelInfoCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelInfoCellView.xib; sourceTree = "<group>"; };
+		1A18715020EDF50800FA94EE /* TravelInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TravelInfo.h; sourceTree = "<group>"; };
+		1A18715120EDF50800FA94EE /* TravelInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TravelInfo.m; sourceTree = "<group>"; };
+		1A18715420EE156800FA94EE /* NewTravelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTravelViewController.h; sourceTree = "<group>"; };
+		1A18715520EE156800FA94EE /* NewTravelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTravelViewController.m; sourceTree = "<group>"; };
+		1A18715620EE156800FA94EE /* NewTravelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTravelViewController.xib; sourceTree = "<group>"; };
+		1A18715A20EE32F800FA94EE /* NewConferenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewConferenceViewController.h; sourceTree = "<group>"; };
+		1A18715B20EE32F800FA94EE /* NewConferenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewConferenceViewController.m; sourceTree = "<group>"; };
+		1A18715C20EE32F800FA94EE /* NewConferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewConferenceViewController.xib; sourceTree = "<group>"; };
 		1A19015820EB891900065CD6 /* JdDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JdDetailViewController.h; sourceTree = "<group>"; };
 		1A19015920EB891900065CD6 /* JdDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JdDetailViewController.m; sourceTree = "<group>"; };
 		1A19015A20EB891900065CD6 /* JdDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JdDetailViewController.xib; sourceTree = "<group>"; };
@@ -654,6 +672,7 @@
 		1A1282BF20EA1C7D0078DB92 /* conference */ = {
 			isa = PBXGroup;
 			children = (
+				1A18715920EE32E500FA94EE /* new */,
 				1A0F3AB120EB145E002BE0F5 /* detail */,
 				1A1282C020EA1CE20078DB92 /* ConferenceListViewController.h */,
 				1A1282C120EA1CE20078DB92 /* ConferenceListViewController.m */,
@@ -780,6 +799,36 @@
 			path = new;
 			sourceTree = "<group>";
 		};
+		1A18714A20EDC16000FA94EE /* info */ = {
+			isa = PBXGroup;
+			children = (
+				1A18714B20EDC1AB00FA94EE /* TravelInfoCellView.h */,
+				1A18714C20EDC1AB00FA94EE /* TravelInfoCellView.m */,
+				1A18714E20EDC1F000FA94EE /* TravelInfoCellView.xib */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		1A18715320EE154B00FA94EE /* new */ = {
+			isa = PBXGroup;
+			children = (
+				1A18715420EE156800FA94EE /* NewTravelViewController.h */,
+				1A18715520EE156800FA94EE /* NewTravelViewController.m */,
+				1A18715620EE156800FA94EE /* NewTravelViewController.xib */,
+			);
+			path = new;
+			sourceTree = "<group>";
+		};
+		1A18715920EE32E500FA94EE /* new */ = {
+			isa = PBXGroup;
+			children = (
+				1A18715A20EE32F800FA94EE /* NewConferenceViewController.h */,
+				1A18715B20EE32F800FA94EE /* NewConferenceViewController.m */,
+				1A18715C20EE32F800FA94EE /* NewConferenceViewController.xib */,
+			);
+			path = new;
+			sourceTree = "<group>";
+		};
 		1A19015720EB880500065CD6 /* detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +842,7 @@
 		1A2008C420E8C5960076C253 /* travel */ = {
 			isa = PBXGroup;
 			children = (
+				1A18715320EE154B00FA94EE /* new */,
 				1A12830B20EA5E330078DB92 /* detail */,
 				1A2008C620E8C68E0076C253 /* TravelViewController.h */,
 				1A2008C520E8C68D0076C253 /* TravelViewController.m */,
@@ -804,12 +854,13 @@
 		1A2008CB20E8DE1E0076C253 /* travel */ = {
 			isa = PBXGroup;
 			children = (
+				1A18714A20EDC16000FA94EE /* info */,
 				1A2008CE20E8DE2F0076C253 /* TravelTableViewCell.h */,
 				1A2008CC20E8DE2E0076C253 /* TravelTableViewCell.m */,
 				1A2008CD20E8DE2E0076C253 /* TravelTableViewCell.xib */,
 			);
 			name = travel;
-			path = "New Group";
+			path = "Home/New Group";
 			sourceTree = "<group>";
 		};
 		1A83806A20ECB52A00A0E82B /* office */ = {
@@ -932,7 +983,6 @@
 			isa = PBXGroup;
 			children = (
 				1A1282C520EA1E800078DB92 /* conference */,
-				1A2008CB20E8DE1E0076C253 /* travel */,
 				2AA3F8AD20D7EABE00CEEE44 /* TodoList */,
 				2A0AEEA620D00DA700FB902F /* business */,
 			);
@@ -1211,6 +1261,8 @@
 				1A83808320ECD18400A0E82B /* BaoxiaoInfo.m */,
 				1A83808B20ED01CB00A0E82B /* BaoxiaoZz.h */,
 				1A83808C20ED01CB00A0E82B /* BaoxiaoZz.m */,
+				1A18715020EDF50800FA94EE /* TravelInfo.h */,
+				1A18715120EDF50800FA94EE /* TravelInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1222,6 +1274,7 @@
 				1A1282F420EA38D80078DB92 /* goAbroad */,
 				1A1282E820EA361A0078DB92 /* jd */,
 				1A1282DC20EA24BC0078DB92 /* cultivate */,
+				1A2008CB20E8DE1E0076C253 /* travel */,
 				2A3A3C2220CCEBAA00B55178 /* Home */,
 			);
 			path = Views;
@@ -1626,6 +1679,7 @@
 				1A1282DB20EA246F0078DB92 /* CultivateListViewController.xib in Resources */,
 				1A2008D020E8DE2F0076C253 /* TravelTableViewCell.xib in Resources */,
 				1A1282EC20EA36410078DB92 /* JdTableViewCell.xib in Resources */,
+				1A18715E20EE32F800FA94EE /* NewConferenceViewController.xib in Resources */,
 				2AE2922120E3759D005692D5 /* 添加.png in Resources */,
 				2AE2922820E3759D005692D5 /* MJPhotoBrowser.bundle in Resources */,
 				2A661C1320C817B000A32173 /* PersonInfoViewController.xib in Resources */,
@@ -1635,6 +1689,7 @@
 				2A0AEE8620D0016300FB902F /* OfficeMainViewController.xib in Resources */,
 				2ADE808220E7DABE001C9F8D /* OfficeListDetailViewController.xib in Resources */,
 				2A61573320D8912900B7F0D9 /* MJRefresh.bundle in Resources */,
+				1A18714F20EDC1F000FA94EE /* TravelInfoCellView.xib in Resources */,
 				1A1282BB20E9CBF80078DB92 /* detail.xib in Resources */,
 				2A0AEEAB20D00E3200FB902F /* OfficeMainTableViewCell.xib in Resources */,
 				1A15DA4E20ED2CDE00A576AA /* NewBaoxiaoViewController.xib in Resources */,
@@ -1647,6 +1702,7 @@
 				1A1282E720EA34570078DB92 /* JdListViewController.xib in Resources */,
 				1A2008C920E8C68E0076C253 /* TravelViewController.xib in Resources */,
 				1A0F3AB620EB149C002BE0F5 /* ConferenceDetailViewController.xib in Resources */,
+				1A18715820EE156800FA94EE /* NewTravelViewController.xib in Resources */,
 				2A661BE220C80C3E00A32173 /* Assets.xcassets in Resources */,
 				1A0F3ABF20EB4693002BE0F5 /* BusinessDetailViewController.xib in Resources */,
 				2AE2922220E3759D005692D5 /* 添加@2x.png in Resources */,
@@ -1734,7 +1790,9 @@
 				2A6E1CED20CABB78002FC5C0 /* IQKeyboardManager.m in Sources */,
 				2A61576020D8913300B7F0D9 /* ActionSheetCustomPicker.m in Sources */,
 				1A1282CF20EA201E0078DB92 /* ConferenceTableViewCell.m in Sources */,
+				1A18715720EE156800FA94EE /* NewTravelViewController.m in Sources */,
 				2A1258FD20E8B45B00B6A16F /* OfficeDetailInfo.m in Sources */,
+				1A18715D20EE32F800FA94EE /* NewConferenceViewController.m in Sources */,
 				2A3A3C5620CD364000B55178 /* SDWebImagePrefetcher.m in Sources */,
 				1A2008CF20E8DE2F0076C253 /* TravelTableViewCell.m in Sources */,
 				2A61576120D8913300B7F0D9 /* ActionSheetDatePicker.m in Sources */,
@@ -1855,12 +1913,14 @@
 				2A61573E20D8912900B7F0D9 /* MJRefreshAutoNormalFooter.m in Sources */,
 				2AE2922A20E3759D005692D5 /* MJPhotoLoadingView.m in Sources */,
 				2AA9358D20DA307300397077 /* BobBaseListViewController.m in Sources */,
+				1A18715220EDF50800FA94EE /* TravelInfo.m in Sources */,
 				1A0F3ABA20EB3EAA002BE0F5 /* ConferenceInfo.m in Sources */,
 				2AE2922920E3759D005692D5 /* MJPhotoBrowser.m in Sources */,
 				2A61573720D8912900B7F0D9 /* MJRefreshComponent.m in Sources */,
 				2A6E1CF020CABB78002FC5C0 /* IQUIScrollView+Additions.m in Sources */,
 				2A3A3C5920CD364000B55178 /* UIImage+MultiFormat.m in Sources */,
 				1A1282E620EA34570078DB92 /* JdListViewController.m in Sources */,
+				1A18714D20EDC1AB00FA94EE /* TravelInfoCellView.m in Sources */,
 				2AE2921A20E3759D005692D5 /* ELCImagePickerController.m in Sources */,
 				2A61573220D8912900B7F0D9 /* UIScrollView+MJExtension.m in Sources */,
 				2A661BDA20C80C3E00A32173 /* AppDelegate.m in Sources */,

@@ -8,7 +8,7 @@
 @interface OfficeInfo : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *stand;
+@property (nonatomic, strong) NSString *standard;
 @property (nonatomic, strong) NSString *univalent;
 @property (nonatomic, strong) NSString *number;
 @property (nonatomic, strong) NSString *money;

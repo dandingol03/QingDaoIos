@@ -17,8 +17,8 @@
                 <outlet property="isLoanImag_n" destination="tUH-uy-8Cv" id="R1l-jz-puu"/>
                 <outlet property="isLoanImag_y" destination="Ash-ug-isi" id="UJi-9M-HMp"/>
                 <outlet property="noBtn" destination="eHB-DZ-5WT" id="Kii-lL-6CB"/>
-                <outlet property="office_ll" destination="hrn-ED-92B" id="HtI-jf-8fx"/>
                 <outlet property="scrollView" destination="lhp-dB-Pwo" id="I1I-xZ-3YM"/>
+                <outlet property="travel_ll" destination="hrn-ED-92B" id="EX2-iP-8Uo"/>
                 <outlet property="view" destination="FSG-jJ-5hY" id="qyp-na-Lic"/>
                 <outlet property="yesBtn" destination="UoM-En-qwz" id="Bmh-4G-MTF"/>
             </connections>
@@ -162,7 +162,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNR-tl-em0">
                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                     <connections>
-                                                        <action selector="addOfficeListAction:" destination="-1" eventType="touchUpInside" id="UMb-iL-bcf"/>
+                                                        <action selector="addTravelItemAction:" destination="-1" eventType="touchUpInside" id="D0p-4S-cps"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="jia" translatesAutoresizingMaskIntoConstraints="NO" id="kxI-7n-xjP">

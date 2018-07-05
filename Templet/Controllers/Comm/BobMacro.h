@@ -14,6 +14,7 @@
 #define BobLibrary_BobMacro_h
 
 #define  HTTP_SERVER @"http://211.159.151.39:81/kunlun-in-control/control_mobile"
+//#define  HTTP_SERVER @"http://192.168.0.198:8080/kunlun-in-control/control_mobile"
 
 #define MARGIN_TOP ([[[UIDevice currentDevice] systemVersion] floatValue] > 6.9 ? 66:0)
 

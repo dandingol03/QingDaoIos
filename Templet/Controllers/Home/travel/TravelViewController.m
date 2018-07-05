@@ -15,6 +15,7 @@
 #import "OfficeListDetailViewController.h"
 #import "TravelDetailViewController.h"
 #import "TravelTableViewCell.h"
+#import "NewTravelViewController.h"
 
 
 @interface TravelViewController ()<UITableViewDataSource,UITableViewDataSource>
@@ -105,9 +106,9 @@
 
 //右上角加号
 -(void)addingOfficeApply{
-    AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
-    addOfficeVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:addOfficeVc animated:YES];
+    NewTravelViewController *newTravelVc = [[NewTravelViewController alloc]init];
+    newTravelVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newTravelVc animated:YES];
 }
 
 #pragma mark http

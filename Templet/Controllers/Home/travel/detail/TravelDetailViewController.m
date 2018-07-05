@@ -6,21 +6,19 @@
 
 #import "TravelDetailViewController.h"
 #import "OfficeDetailInfo.h"
-#import "OfficeInfo.h"
+#import "TravelInfo.h"
 #import "ApplyInitInfo.h"
+#import "TravelInfoCellView.h"
+
 #define ScreenWidth  CGRectGetWidth([UIScreen mainScreen].bounds)
 
 @interface TravelDetailViewController ()
-@property (weak, nonatomic) IBOutlet UIView *office_ll;
+@property (weak, nonatomic) IBOutlet UIView *travel_ll;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (strong, nonatomic) IBOutlet UILabel *expenditureLabel;//支出事项
-@property (strong, nonatomic) IBOutlet UILabel *departmentLabel;//当前单位
-@property (strong, nonatomic) IBOutlet UITextField *budgetAmountField;//预算金额
 
-@property (strong, nonatomic) IBOutlet UITextField *cashContentField;//用款内容
-@property (strong, nonatomic) IBOutlet UITextField *remarkField;//备注
+@property (strong, nonatomic) IBOutlet UILabel *departmentLabel;//当前单位
 
 @property (nonatomic, assign) BOOL isLoan;//是否借款 0是，1否
 
@@ -42,19 +40,19 @@
 
 @implementation TravelDetailViewController
 
-NSMutableArray * officeListArray;
+NSMutableArray * travelListArray;
 NSLayoutConstraint *heightConstraint;
 NSLayoutConstraint *contentHc;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-      self.navigationItem.title = @"详情";
+    self.navigationItem.title = @"详情";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"fooder-bg11"] forBarMetrics:UIBarMetricsDefault];
     
-    officeListArray=[[NSMutableArray alloc] init];
+    travelListArray=[[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
     //[self.navigationController setNavigationBarHidden:YES animated:YES];
     
@@ -100,13 +98,13 @@ NSLayoutConstraint *contentHc;
                                          NSLog(@"responseObject-->%@",content);
                                          NSDictionary *data = [content objectForKey:@"data"];
                                          self.info = [OfficeDetailInfo objectWithKeyValues:data];
-                                         NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         officeListArray = [OfficeInfo objectArrayWithKeyValuesArray:array];
+                                         NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"travelList"];
+                                         travelListArray = [TravelInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          [self.loadingHelper hideCommittingView:YES];
                                          
                                          [self setDefaultInfo:self.info];
-                                         [self initOfficeList:officeListArray];
+                                         [self initTravelList:travelListArray];
                                          
                                      }
                                       WithFailurBlock:^(NSError *error) {
@@ -116,22 +114,22 @@ NSLayoutConstraint *contentHc;
     
 }
 
--(void)initOfficeList:(NSMutableArray*)officeListArray{
+-(void)initTravelList:(NSMutableArray*)travelListArray{
    
-    NSInteger count = officeListArray.count;
+    NSInteger count = travelListArray.count;
   
-    //添加office_ll的高度约束
+    //添加travel_ll的高度约束
     if(heightConstraint!=nil)
     {
-        [self.office_ll removeConstraint:heightConstraint];
+        [self.travel_ll removeConstraint:heightConstraint];
     }
-    heightConstraint = [NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
-                                                     constant:self.office_ll.frame.size.height+ 210*count];
-    [self.office_ll addConstraints:@[heightConstraint]];
+    heightConstraint = [NSLayoutConstraint constraintWithItem:self.travel_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
+                                                     constant:self.travel_ll.frame.size.height+ 990*count];
+    [self.travel_ll addConstraints:@[heightConstraint]];
     
     
-    self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height+210*count);
-    self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height+210*count+20);
+    self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height+990*count);
+    self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height+990*count+20);
     //添加contentView的高度约束
     if(contentHc!=nil)
     {
@@ -143,33 +141,30 @@ NSLayoutConstraint *contentHc;
     [self.contentView addConstraint:contentHc];
     
     
-    if(officeListArray!=nil&&officeListArray.count!=0){
+    if(travelListArray!=nil&&travelListArray.count!=0){
         
-        for(OfficeInfo* listInfo in officeListArray){
+        for(TravelInfo* travelInfo in travelListArray){
             
-            OfficeListCellView *officeView = [OfficeListCellView viewFromXib];
+            TravelInfoCellView *travelView = [TravelInfoCellView viewFromXib];
             
             
-            officeView.delegate = self;
-            [officeView setTranslatesAutoresizingMaskIntoConstraints:NO];
+            travelView.delegate = self;
+            [travelView setTranslatesAutoresizingMaskIntoConstraints:NO];
             
-            [self.office_ll addSubview:officeView];
-            [officeView passViewOfficeList:officeListArray position:officeListArray.count-1 parent:self.office_ll];//在这由自己完成高度、宽度设置
-            [officeView setDefaultText:listInfo];
+            [self.travel_ll addSubview:travelView];
+            [travelView passViewOfficeList:travelListArray position:travelListArray.count-1 parent:self.travel_ll];//在这由自己完成高度、宽度设置
+            [travelView setDefaultText:travelInfo];
             
         }
-        [self.office_ll layoutIfNeeded];
+        [self.travel_ll layoutIfNeeded];
     }
     
 }
 
 
 -(void)setDefaultInfo:(OfficeDetailInfo*)officeInfo{
-    self.expenditureLabel.text = officeInfo.expendType;
+
     self.departmentLabel.text = officeInfo.applyDeptName;
-    self.budgetAmountField.text = [NSString stringWithFormat:@"%@", officeInfo.budgetAmount];
-    self.cashContentField.text = officeInfo.cashContent;
-    self.remarkField.text = officeInfo.remarks;
     self.isLoan = officeInfo.isLoan;
     if(self.isLoan == YES){
         self.isLoanImag_y.image = [UIImage imageNamed:@"checkbox_s"];
@@ -192,29 +187,29 @@ NSLayoutConstraint *contentHc;
 }
 
 
-- (IBAction)addOfficeListAction:(id)sender {
+- (IBAction)addTravelItemAction:(id)sender {
     OfficeInfo* officeInfo = [[OfficeInfo alloc] init];
-    [officeListArray addObject:officeInfo];
+    [travelListArray addObject:officeInfo];
     
     
-    CGFloat view3X = self.office_ll.frame.origin.x;
-    CGFloat view3Y = self.office_ll.frame.origin.y;
+    CGFloat view3X = self.travel_ll.frame.origin.x;
+    CGFloat view3Y = self.travel_ll.frame.origin.y;
     
     
     if(heightConstraint!=nil)
     {
-        [self.office_ll removeConstraint:heightConstraint];
+        [self.travel_ll removeConstraint:heightConstraint];
     }
     
-    heightConstraint = [NSLayoutConstraint constraintWithItem:self.office_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
-                                                     constant:self.office_ll.frame.size.height+ 210];
+    heightConstraint = [NSLayoutConstraint constraintWithItem:self.travel_ll attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
+                                                     constant:self.travel_ll.frame.size.height+ 990];
     
     
     
-    [self.office_ll addConstraints:@[heightConstraint]];
+    [self.travel_ll addConstraints:@[heightConstraint]];
     
     
-    self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height+210);
+    self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height+990);
     if(contentHc!=nil)
     {
         [self.contentView removeConstraint:contentHc];
@@ -227,38 +222,38 @@ NSLayoutConstraint *contentHc;
     //   self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height+210);
     
     //创建cell
-    OfficeListCellView *officeView = [OfficeListCellView viewFromXib];
+    TravelInfoCellView *travelView = [TravelInfoCellView viewFromXib];
     
     
-    officeView.delegate = self;
-    [officeView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    travelView.delegate = self;
+    [travelView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [self.office_ll addSubview:officeView];
-    [officeView passViewOfficeList:officeListArray position:officeListArray.count-1 parent:self.office_ll];//在这由自己完成高度、宽度设置
+    [self.travel_ll addSubview:travelView];
+    [travelView passViewOfficeList:travelListArray position:travelListArray.count-1 parent:self.travel_ll];//在这由自己完成高度、宽度设置
     
     
-    [self.office_ll layoutIfNeeded];
+    [self.travel_ll layoutIfNeeded];
     
 }
 
 //cell删除的回调，用于调整height的constaint
--(void)deleteOfficeListCell:(NSInteger)position
+-(void)deleteTravelItem:(NSInteger)position
 {
     //更新heightConstraint
-    [self.office_ll removeConstraint:heightConstraint];
-    [heightConstraint setConstant:self.office_ll.frame.size.height-210];
-    [self.office_ll addConstraint:heightConstraint];
+    [self.travel_ll removeConstraint:heightConstraint];
+    [heightConstraint setConstant:self.travel_ll.frame.size.height-990];
+    [self.travel_ll addConstraint:heightConstraint];
     
-    self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height-210);
+    self.contentView.frame = CGRectMake(0,0,ScreenWidth, self.contentView.frame.size.height-990);
     if(contentHc!=nil)
         [self.contentView removeConstraint:contentHc];
     contentHc=[NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                             constant:self.contentView.frame.size.height];
     [self.contentView addConstraint:contentHc];
     
-    [self.office_ll layoutIfNeeded];
+    [self.travel_ll layoutIfNeeded];
     
-    self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height-210);
+    self.scrollView.contentSize = CGSizeMake(ScreenWidth, self.scrollView.contentSize.height-990);
     
 }
 

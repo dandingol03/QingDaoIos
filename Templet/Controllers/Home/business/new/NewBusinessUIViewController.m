@@ -133,7 +133,12 @@
         [offices addObject: [[self.officeListArray objectAtIndex:0] keyValues]];
     }
     [offices keyValues];
-    NSDictionary *ob=@{@"dataList": offices};
+    NSMutableDictionary *ob=[[NSMutableDictionary alloc] init];
+    [ob setObject:offices forKey:@"dataList"];
+    
+    NSError *parseError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:ob options:NSJSONWritingPrettyPrinted error:&parseError];
+    NSString *converted= [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
     
     NSDictionary *parameters=@{@"personId":personId,
@@ -144,7 +149,7 @@
                                @"budgetAmount":self.budgetAmount.text,
                                @"remark":self.remark.text,
                                @"cashContent":self.cashContent.text,
-                               @"officeList":[NSString stringWithFormat:@"%@",ob]
+                               @"officeList":converted
                                };
     [[DYMHTTPManager sharedManager] requestWithMethod:GET
                                              WithPath:str
@@ -154,13 +159,13 @@
                                          NSDictionary *content = [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:nil];//转换数据格式
                                          NSLog(@"responseObject-->%@",content);
                                          NSDictionary *data = [content objectForKey:@"data"];
-                                         self.info = [OfficeDetailInfo objectWithKeyValues:data];
-                                         NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         self.officeListArray = [OfficeInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          [self.loadingHelper hideCommittingView:YES];
-                                         
-                                       
+                                         if([[data valueForKey:@"result"] intValue]==1)
+                                         {
+                                             UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"信息" message:@"办公申请提交成功" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+                                             [alertview show];
+                                         }
                                          
                                      }
                                       WithFailurBlock:^(NSError *error) {
