@@ -10,6 +10,7 @@
 #import "PanBackNavigationController.h"
 #import "HomeMainViewController.h"
 #import "PersonMainViewController.h"
+#import "AuditViewController.h"
 #import "UIColor+Util.h"
 #import <Bugly/Bugly.h>
 #import "AppService.h"

@@ -14,6 +14,7 @@
 #import "HomeMainViewController.h"
 #import "PersonMainViewController.h"
 #import "VerifyMainViewController.h"
+#import "AuditViewController.h"
 #import "DYMHTTPManager.h"
 
 
@@ -61,7 +62,7 @@
 - (void)login{
     //NSString *username = [self.userNameField.text trim];
     //NSString *password = [self.passwordField.text trim];
-    NSString *username = @"陈琳";
+    NSString *username = @"刘雪青";
     NSString *password = @"1";
     
     if(username != nil && username.length > 0
@@ -106,7 +107,8 @@
                                                       selectedImage:[UIImage imageNamed:@"文件"]];
     
     
-    VerifyMainViewController *verify = [[VerifyMainViewController alloc]init];
+    
+    AuditViewController *verify = [[AuditViewController alloc]init];
     PanBackNavigationController *verifyNavigation = [[PanBackNavigationController alloc]initWithRootViewController:verify];
     verifyNavigation.tabBarItem = [[UITabBarItem alloc] initWithTitle: @"审核"
                                                               image:[UIImage imageNamed:@"审核-2"]

@@ -1,17 +1,16 @@
 //
+//  AuditApplyInfo.m
 //  Templet
 //
 //
 
-#import "BusinessApplyInfo.h"
+#import "AuditApplyInfo.h"
 
-@implementation BusinessApplyInfo
-
+@implementation AuditApplyInfo
 - (instancetype)init
 {
     self = [super init];
     return self;
 }
-
 
 @end

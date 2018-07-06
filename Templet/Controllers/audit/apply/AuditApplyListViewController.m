@@ -1,22 +1,23 @@
 //
-//  GoAbroadListViewController.m
+//  AuditApplyListViewController.m
 //  Templet
 //
 //
 
-#import "GoAbroadListViewController.h"
+#import "AuditApplyListViewController.h"
 #import "CCTableDataItem.h"
 #import "CCTableViewDelegate.h"
 #import "CCTableViewDataSource.h"
 #import "UITableView+CCUtil.h"
 #import "BobLoadingHelper.h"
 #import "AddOfficeApplyViewController.h"
-#import "BusinessApplyInfo.h"
-#import "GoAbroadTableViewCell.h"
+#import "AuditApplyInfo.h"
+#import "AuditApplyTableViewCell.h"
 #import "GoAbroadDetailViewController.h"
 #import "NewGoAbroadViewController.h"
 
-@interface GoAbroadListViewController () <UITableViewDataSource,UITableViewDataSource>
+
+@interface AuditApplyListViewController ()<UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
 @property (strong, nonatomic) IBOutlet UIView *lineView1;
 @property (strong, nonatomic) IBOutlet UIView *lineView2;
@@ -34,13 +35,12 @@
 @property(nonatomic,assign)BOOL update;
 @end
 
-@implementation GoAbroadListViewController
+@implementation AuditApplyListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title=@"出国";
-    [self setViewItem];
+    self.navigationItem.title=@"审核申请";
+    //[self setViewItem];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
@@ -57,27 +57,6 @@
     [self addLoadMoreFooterView];
 }
 
--(void)setTableView{
-    self.tableView.delegate = self.delegate;
-    self.tableView.dataSource = self.dataSource;
-    
-    [self.tableView registerNibCellClasses:@[[GoAbroadTableViewCell class],
-                                             ]];
-    [self loadData:YES];
-    
-    __weak __typeof(self)weakSelf = self;
-    [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        
-        BusinessApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
-        GoAbroadDetailViewController* officeListDetailVc = [[GoAbroadDetailViewController alloc]init];
-        officeListDetailVc.expendId =  data.expendId;
-        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
-        
-        
-    }];
-}
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -89,8 +68,6 @@
     }
 }
 
-
-
 - (void)setViewItem{
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                            style:UIBarButtonItemStyleDone
@@ -101,17 +78,33 @@
 }
 
 
-//右上角加号
--(void)addingOfficeApply{
-    NewGoAbroadViewController *newGoAbroadVc = [[NewGoAbroadViewController alloc]init];
-    newGoAbroadVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:newGoAbroadVc animated:YES];
+
+-(void)setTableView{
+    self.tableView.delegate = self.delegate;
+    self.tableView.dataSource = self.dataSource;
+    
+    [self.tableView registerNibCellClasses:@[[AuditApplyTableViewCell class],
+                                             ]];
+    [self loadData:YES];
+    
+    __weak __typeof(self)weakSelf = self;
+    [self.delegate setDidSelectRowAtIndexPath:^(UITableView *tableView, NSIndexPath *indexPath, id rowData, NSString *cellClassName) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+        AuditApplyInfo *data = [weakSelf.dataItem cellDataForIndexPath:indexPath];
+        GoAbroadDetailViewController* officeListDetailVc = [[GoAbroadDetailViewController alloc]init];
+        officeListDetailVc.expendId =  data.expendId;
+        [weakSelf.navigationController pushViewController:officeListDetailVc animated:YES];
+        
+        
+    }];
 }
+
 
 #pragma mark http
 -(void)requestDataService:(NSInteger)page{
     [self.loadingHelper showCommittingView:self.view withTitle:@"loading" animated:YES];
-    NSString* str = @""HTTP_SERVER"/m_getshenQingInfoList.do";
+    NSString* str = @""HTTP_SERVER"/m_getApplyInfoList.do";
     //构造参数
     AppDelegate* appDelegate = [AppDelegate shareDelegate];
     NSString* personId = appDelegate.personId;
@@ -121,7 +114,7 @@
     }else{
         [self addPageIndexIsFirst:NO];
     }
-    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr,@"expendType":@"22"};
+    NSDictionary *parameters=@{@"personId":personId,@"pageNum":pageStr};
     [[DYMHTTPManager sharedManager] requestWithMethod:GET
                                              WithPath:str
                                            WithParams:parameters
@@ -130,7 +123,7 @@
                                          NSDictionary *content = [NSJSONSerialization JSONObjectWithData:strData options:NSJSONReadingMutableContainers error:nil];//转换数据格式
                                          NSLog(@"responseObject-->%@",content);
                                          NSMutableArray *array = [[content objectForKey:@"data"] objectForKey:@"dataList"];
-                                         NSArray *arrayM = [BusinessApplyInfo objectArrayWithKeyValuesArray:array];
+                                         NSArray *arrayM = [AuditApplyInfo objectArrayWithKeyValuesArray:array];
                                          [self endRefreshing];
                                          if(page!=1)
                                              [self bindData:arrayM isRefresh:false];
@@ -144,7 +137,6 @@
                                       }];
     
 }
-
 
 
 
@@ -173,9 +165,9 @@
         if(isRefresh)
             [self.dataItem clearData];
         if( self.withoutFinishedButton.selected){
-            [self.dataItem addCellClass:[GoAbroadTableViewCell class] dataItems:dataList];
+            [self.dataItem addCellClass:[AuditApplyTableViewCell class] dataItems:dataList];
         }else{
-            [self.dataItem addCellClass:[GoAbroadTableViewCell class] dataItems:self.finishedInfoItems];
+            [self.dataItem addCellClass:[AuditApplyTableViewCell class] dataItems:self.finishedInfoItems];
         }
         
         [self.tableView reloadData];
@@ -217,14 +209,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

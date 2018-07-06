@@ -1,5 +1,5 @@
 //
-//  VerifyMainViewController.h
+//  AuditViewController.h
 //  Templet
 //
 //
@@ -8,6 +8,6 @@
 #import "BobBaseListViewController.h"
 #import "OfficeListCellView.h"
 
-@interface VerifyMainViewController : BobBaseListViewController<VcDDelegate>
+@interface AuditViewController : BobBaseListViewController
 
 @end

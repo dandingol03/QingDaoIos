@@ -15,6 +15,7 @@
 #import "OfficeListDetailViewController.h"
 #import "JdDetailViewController.h"
 #import "JdTableViewCell.h"
+#import "NewJdViewController.h"
 
 
 @interface JdListViewController () <UITableViewDataSource,UITableViewDataSource>
@@ -104,9 +105,9 @@
 
 //右上角加号
 -(void)addingOfficeApply{
-    AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
-    addOfficeVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:addOfficeVc animated:YES];
+    NewJdViewController *newJdVc = [[NewJdViewController alloc]init];
+    newJdVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newJdVc animated:YES];
 }
 
 #pragma mark http

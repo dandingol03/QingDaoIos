@@ -13,7 +13,8 @@
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
 #import "BaoxiaoDetailViewController.h"
-#include "BaoXiaoTableViewCell.h"
+#import "BaoXiaoTableViewCell.h"
+#import "NewBaoxiaoViewController.h"
 
 @interface BaoXiaoListViewController ()<UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
@@ -103,9 +104,9 @@
 
 //右上角加号
 -(void)addingOfficeApply{
-    AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
-    addOfficeVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:addOfficeVc animated:YES];
+    NewBaoxiaoViewController *newBaoxiaoVc = [[NewBaoxiaoViewController alloc]init];
+    newBaoxiaoVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newBaoxiaoVc animated:YES];
 }
 
 #pragma mark http

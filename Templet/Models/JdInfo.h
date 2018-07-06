@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *jc_time;
 @property (nonatomic, strong) NSString *jc_address;
 @property (nonatomic, strong) NSString *zs_address;
-@property (nonatomic, strong) NSNumber *zs_days;
+@property (nonatomic, strong) NSString *zs_days;
 @property (nonatomic, strong) NSString *yj;
 @property (nonatomic, strong) NSString *jdzs_money;
 @property (nonatomic, strong) NSString *jdhs_money;
@@ -38,6 +38,6 @@
 @property (nonatomic, strong) NSString *check_state;
 @property (nonatomic, strong) NSString *expendId;
 @property (nonatomic) BOOL isLoan;
-@property (nonatomic, strong) NSString *remarks;
+@property (nonatomic, strong) NSString *remark;
 @property (nonatomic, strong) NSString *cashContent;
 @end

@@ -1,17 +1,16 @@
 //
-//  NewConferenceViewController.m
+//  NewCultivateViewController.m
 //  Templet
 //
 //
 
-#import "NewConferenceViewController.h"
+#import "NewCultivateViewController.h"
 #import "ConferenceInfo.h"
-#import "OfficeInfo.h"
+#import "CultivateInfo.h"
 #import "ApplyInitInfo.h"
 
 
-
-@interface NewConferenceViewController ()
+@interface NewCultivateViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *departmentLabel;//当前单位
 
 @property (nonatomic, assign) BOOL isLoan;//是否借款 0是，1否
@@ -20,27 +19,27 @@
 @property (strong, nonatomic) IBOutlet UIImageView *isLoanImag_n;//不需要借款
 @property (strong, nonatomic) IBOutlet UIButton *noBtn;
 
-@property (weak, nonatomic) IBOutlet UITextField *meetingName;//会议名称
-@property (weak, nonatomic) IBOutlet UITextField *meetingTime;
+@property (weak, nonatomic) IBOutlet UITextField *trainName;
+@property (weak, nonatomic) IBOutlet UITextField *trainTime;
 @property (weak, nonatomic) IBOutlet UITextField *trainEnd;
 @property (weak, nonatomic) IBOutlet UITextField *trainReport;
 @property (weak, nonatomic) IBOutlet UITextField *trainLeave;
-@property (weak, nonatomic) IBOutlet UITextField *meetingCategory;
-@property (weak, nonatomic) IBOutlet UITextField *meetingPlace;
-@property (weak, nonatomic) IBOutlet UITextField *estimatedNum;
-@property (weak, nonatomic) IBOutlet UITextField *staffNum;
-@property (weak, nonatomic) IBOutlet UITextField *meetingReason;
-@property (weak, nonatomic) IBOutlet UILabel *estimatedNumLabel;
+@property (weak, nonatomic) IBOutlet UITextField *trainPlace;
+@property (weak, nonatomic) IBOutlet UITextField *trainStaffNum;
+@property (weak, nonatomic) IBOutlet UITextField *trainNum;
+@property (weak, nonatomic) IBOutlet UITextField *trainBudget;
+@property (weak, nonatomic) IBOutlet UITextField *trainObject;
+@property (weak, nonatomic) IBOutlet UILabel *trainNumLabel;
 
-@property(strong,nonatomic) ConferenceInfo* info;
+@property(strong,nonatomic) CultivateInfo* info;
 @end
 
-@implementation NewConferenceViewController
+@implementation NewCultivateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"详情";
-    self.estimatedNumLabel.text=@"会议预计\n人数:";
+    self.navigationItem.title = @"添加";
+    self.trainNumLabel.text=@"预计参训\n人数:";
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
                                                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
@@ -70,12 +69,12 @@
     switch ([sender tag]) {
         case 3:
         {
-            self.info.meetingName=self.meetingName.text;
+            self.info.trainName=self.trainName.text;
         }
             break;
         case 4:
         {
-            self.info.meetingTime=self.meetingTime.text;
+            self.info.trainTime=self.trainTime.text;
         }
             break;
         case 5:
@@ -95,30 +94,30 @@
             break;
         case 8:
         {
-            self.info.meetingCategory=self.meetingCategory.text;
+            self.info.trainPlace=self.trainPlace.text;
         }
             break;
         case 9:
         {
-            self.info.meetingPlace=self.meetingPlace.text;
+            self.info.trainBudget=self.trainBudget.text;
         }
             break;
         case 10:
         {
-            self.info.estimatedNum=[NSNumber numberWithInt: [self.estimatedNum.text intValue]];
+            self.info.trainNum=[NSNumber numberWithInt: [self.trainNum.text intValue]];
         }
             break;
         case 11:
         {
-            self.info.meetingReason=self.meetingReason.text;
+            self.info.trainObject=self.trainObject.text;
         }
             break;
         case 12:
         {
-            self.info.staffNum=[NSNumber numberWithInt:[self.meetingPlace.text intValue]];
+            self.info.trainStaffNum=[NSNumber numberWithInt:[self.trainStaffNum.text intValue]];
         }
             break;
-      
+            
         default:
             break;
     }
@@ -135,7 +134,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 @end

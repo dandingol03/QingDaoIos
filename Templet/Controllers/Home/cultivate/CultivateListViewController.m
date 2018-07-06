@@ -14,7 +14,8 @@
 #import "AddOfficeApplyViewController.h"
 #import "BusinessApplyInfo.h"
 #import "CultivateTableViewCell.h"
-#include "CultivateDetailViewController.h"
+#import "CultivateDetailViewController.h"
+#import "NewCultivateViewController.h"
 
 @interface CultivateListViewController () <UITableViewDataSource,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *topView;
@@ -104,9 +105,9 @@
 
 //右上角加号
 -(void)addingOfficeApply{
-    AddOfficeApplyViewController *addOfficeVc = [[AddOfficeApplyViewController alloc]init];
-    addOfficeVc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:addOfficeVc animated:YES];
+    NewCultivateViewController *newCultivateVc = [[NewCultivateViewController alloc]init];
+    newCultivateVc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newCultivateVc animated:YES];
 }
 
 #pragma mark http

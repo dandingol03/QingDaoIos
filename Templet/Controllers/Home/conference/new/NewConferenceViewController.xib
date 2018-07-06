@@ -15,6 +15,7 @@
             <connections>
                 <outlet property="departmentLabel" destination="s4K-wl-A4F" id="NgC-v0-B0R"/>
                 <outlet property="estimatedNum" destination="g56-SW-Jnp" id="fsW-PK-0Ja"/>
+                <outlet property="estimatedNumLabel" destination="Kcl-9h-VgU" id="ZF8-dL-GKK"/>
                 <outlet property="isLoanImag_n" destination="b8l-0R-6QG" id="fEJ-eZ-byA"/>
                 <outlet property="isLoanImag_y" destination="RcD-oR-n1B" id="Fpt-Zb-nkG"/>
                 <outlet property="meetingCategory" destination="mrd-Fz-arK" id="fgd-E0-p8E"/>
@@ -543,7 +544,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NQ-QY-nq8" userLabel="View14">
-                                    <rect key="frame" x="10" y="654" width="355" height="50"/>
+                                    <rect key="frame" x="10" y="672" width="355" height="50"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9B-fH-Deh">
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="50"/>
@@ -592,7 +593,7 @@
                                 <constraint firstItem="4zX-Fh-2SP" firstAttribute="top" secondItem="cW2-0k-hxm" secondAttribute="bottom" constant="2" id="2hq-y4-0Y5"/>
                                 <constraint firstItem="NII-Cq-uUg" firstAttribute="top" secondItem="vTP-A6-o9Z" secondAttribute="bottom" constant="2" id="4BV-4f-cUA"/>
                                 <constraint firstItem="DiY-LU-V4W" firstAttribute="top" secondItem="m9Z-D7-klk" secondAttribute="bottom" constant="2" id="4Xj-Fc-6Os"/>
-                                <constraint firstItem="3NQ-QY-nq8" firstAttribute="top" secondItem="DiY-LU-V4W" secondAttribute="bottom" constant="2" id="4dH-xf-uti"/>
+                                <constraint firstItem="3NQ-QY-nq8" firstAttribute="top" secondItem="DiY-LU-V4W" secondAttribute="bottom" constant="20" id="4dH-xf-uti"/>
                                 <constraint firstAttribute="trailing" secondItem="4zX-Fh-2SP" secondAttribute="trailing" constant="10" id="4pG-om-hVs"/>
                                 <constraint firstItem="4zX-Fh-2SP" firstAttribute="leading" secondItem="yJt-ds-qSC" secondAttribute="leading" constant="10" id="5SD-k3-AJe"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="900" id="A9w-TT-d8b"/>
